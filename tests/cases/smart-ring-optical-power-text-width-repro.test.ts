@@ -32,4 +32,17 @@ test("reproduces the oversized OpticalPower annotation bounds", () => {
       height: 1000,
     }),
   ).toMatchSvgSnapshot(import.meta.path)
+  expect(
+    createIssueReproSnapshot({
+      circuitJson: smartRingTextWidth,
+      analysis,
+      schematicSheetId: "schematic_sheet_19",
+      issueTypes: ["SchematicTextCollision"],
+      showOverlay: false,
+      showTextBoundsFor: ["schematic_text_314", "schematic_text_315"],
+      viewportBounds: { left: -12.8, right: -9.1, top: -1.8, bottom: -3.1 },
+      width: 1000,
+      height: 400,
+    }),
+  ).toMatchSvgSnapshot(import.meta.path, "text-bounds")
 })

@@ -27,4 +27,17 @@ test("reproduces the oversized DockDebug annotation bounds", () => {
       height: 1000,
     }),
   ).toMatchSvgSnapshot(import.meta.path)
+  expect(
+    createIssueReproSnapshot({
+      circuitJson: smartRingTextWidth,
+      analysis,
+      schematicSheetId: "schematic_sheet_15",
+      issueTypes: ["SchematicTextCollision"],
+      showOverlay: false,
+      showTextBoundsFor: ["schematic_text_248", "schematic_text_249"],
+      viewportBounds: { left: -3.3, right: 1.5, top: -1.8, bottom: -3.1 },
+      width: 1000,
+      height: 400,
+    }),
+  ).toMatchSvgSnapshot(import.meta.path, "text-bounds")
 })
