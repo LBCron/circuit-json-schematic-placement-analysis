@@ -1,4 +1,9 @@
-import type { CircuitJson, SchematicTrace, SchematicPort } from "circuit-json"
+import type {
+  CircuitJson,
+  SchematicTrace,
+  SchematicPort,
+  SourcePort,
+} from "circuit-json"
 import { BaseSolver } from "@tscircuit/solver-utils"
 import { getSourcePortConnectivityMapFromCircuitJson } from "circuit-json-to-connectivity-map"
 import type { SolverContext } from "../SolverContext"
@@ -7,6 +12,7 @@ import type {
   SchematicBoxPlacement,
   SchematicPlacementIssue,
 } from "../../types"
+import { PlacementNetworkIndex } from "../../utils/placement-network-index"
 import { addAttr } from "../../utils/format"
 
 export class DiodeResistorAlignmentSolver extends BaseSolver {
@@ -16,6 +22,8 @@ export class DiodeResistorAlignmentSolver extends BaseSolver {
   private readonly out: SchematicPlacementIssue[]
   private readonly schematicTraces: SchematicTrace[]
   private currentIndex = 0
+  private readonly network: PlacementNetworkIndex
+  private readonly nets: string[]
   private readonly sourceConnectivity: ReturnType<
     typeof getSourcePortConnectivityMapFromCircuitJson
   >
@@ -56,17 +64,21 @@ export class DiodeResistorAlignmentSolver extends BaseSolver {
     this.schematicTraces = circuitJson.filter(
       (el): el is SchematicTrace => el.type === "schematic_trace",
     )
-    this.solved = this.schematicTraces.length === 0
+    this.network = new PlacementNetworkIndex(ctx)
+    this.nets = [...this.network.portsByNet.keys()]
+    this.solved = this.schematicTraces.length + this.nets.length === 0
   }
 
   override _step(): void {
-    const trace = this.schematicTraces[this.currentIndex]
-    if (!trace) {
-      this.solved = true
+    const current = this.currentIndex++
+    this.solved =
+      this.currentIndex >= this.schematicTraces.length + this.nets.length
+    if (current >= this.schematicTraces.length) {
+      const net = this.nets[current - this.schematicTraces.length]
+      if (net) this.checkLabelledPair(net)
       return
     }
-    this.currentIndex++
-    this.solved = this.currentIndex >= this.schematicTraces.length
+    const trace = this.schematicTraces[current]!
 
     if (!trace.edges || trace.edges.length === 0) return
 
@@ -125,6 +137,16 @@ export class DiodeResistorAlignmentSolver extends BaseSolver {
     )
       return
 
+    this.checkAlignment(diodeBox, resistorBox, diodePort, resistorPort)
+  }
+
+  private checkAlignment(
+    diodeBox: SchematicBoxPlacement,
+    resistorBox: SchematicBoxPlacement,
+    diodePort: SchematicPort,
+    resistorPort: SchematicPort,
+    labelled = false,
+  ) {
     const diodeName = diodeBox.sourceComponentName || "component"
     const resistorName = resistorBox.sourceComponentName || "component"
     const diodePin =
@@ -157,7 +179,9 @@ export class DiodeResistorAlignmentSolver extends BaseSolver {
     ) {
       this.out.push(
         makeIssue(
-          `trace has corners — align ${diodeName} and ${resistorName} on same axis and rotate so ${diodePinDesc} faces ${resistorPinDesc}`,
+          labelled
+            ? `Align ${diodeName} and ${resistorName} so ${diodePinDesc} faces ${resistorPinDesc} along one visible series connection. Preserve the labelled net and diode polarity; leave room for nearby parts and labels.`
+            : `trace has corners — align ${diodeName} and ${resistorName} on same axis and rotate so ${diodePinDesc} faces ${resistorPinDesc}`,
         ),
       )
       return
@@ -179,6 +203,180 @@ export class DiodeResistorAlignmentSolver extends BaseSolver {
         ),
       )
     }
+  }
+
+  /** Find only nearby private labelled branches; a shared rail or fanout is not a series pair. */
+  private checkLabelledPair(net: string) {
+    const index = this.network,
+      members = index.portsByNet.get(net) ?? []
+    if (
+      members.length !== 2 ||
+      index.isRail(net) ||
+      members.some(
+        (p) =>
+          p.do_not_connect ||
+          p.requires_ground ||
+          p.provides_ground ||
+          p.requires_power ||
+          p.provides_power ||
+          p.requires_voltage !== undefined ||
+          p.provides_voltage !== undefined,
+      )
+    )
+      return
+    const resistor = members.find(
+      (p) =>
+        index.components.get(p.source_component_id)?.ftype ===
+        "simple_resistor",
+    )
+    const diode = members.find((p) =>
+      DiodeResistorAlignmentSolver.DIODE_FTYPES.has(
+        index.components.get(p.source_component_id)?.ftype ?? "",
+      ),
+    )
+    if (
+      !resistor ||
+      !diode ||
+      resistor.source_component_id === diode.source_component_id
+    )
+      return
+    const resistorNets = index.twoTerminalNets(resistor.source_component_id),
+      diodeNets = index.twoTerminalNets(diode.source_component_id)
+    if (
+      !resistorNets ||
+      !diodeNets ||
+      resistorNets.filter((n) => diodeNets.includes(n)).length !== 1
+    )
+      return
+    const sourceResistor = index.components.get(resistor.source_component_id)
+    if (
+      sourceResistor?.ftype !== "simple_resistor" ||
+      !Number.isFinite(sourceResistor.resistance) ||
+      sourceResistor.resistance <= 0
+    )
+      return
+    const parts = [diode, resistor].map((port) => {
+      const id = port.source_component_id,
+        box = index.placement(id),
+        pin = index.port(port),
+        ports = index.portsByComponent.get(id)
+      if (
+        !box ||
+        !pin ||
+        !ports ||
+        !index.twoTerminalNets(id) ||
+        ports.some((p) => p.do_not_connect)
+      )
+        return
+      if (
+        ![
+          box.schX,
+          box.schY,
+          box.width,
+          box.height,
+          pin.center.x,
+          pin.center.y,
+        ].every(Number.isFinite) ||
+        box.width <= 0 ||
+        box.height <= 0 ||
+        !pin.facing_direction ||
+        pin.schematic_sheet_id !== box.schematicSheetId
+      )
+        return
+      if (
+        this.ctx.circuitJson.some(
+          (e) =>
+            e.type === "pcb_component" &&
+            e.source_component_id === id &&
+            e.do_not_place,
+        )
+      )
+        return
+      if (!this.hasLabelledStub(port, pin, net)) return
+      return { box, pin }
+    })
+    const [d, r] = parts
+    if (!d || !r || !index.sameLocalScope(d.box, r.box)) return
+    // Limit this fallback to a small local connection. Remote labels may be intentional.
+    if (DiodeResistorAlignmentSolver.dist(d.pin.center, r.pin.center) > 6)
+      return
+    if (
+      Math.abs(d.box.schX - r.box.schX) < (d.box.width + r.box.width) / 2 &&
+      Math.abs(d.box.schY - r.box.schY) < (d.box.height + r.box.height) / 2
+    )
+      return
+    if (
+      this.out.some(
+        (issue) =>
+          issue.lineItemType === "DiodeResistorNotAligned" &&
+          issue.diodeSchematicBox.schematicComponentId ===
+            d.box.schematicComponentId &&
+          issue.resistorSchematicBox.schematicComponentId ===
+            r.box.schematicComponentId,
+      )
+    )
+      return
+    this.checkAlignment(d.box, r.box, d.pin, r.pin, true)
+  }
+
+  private hasLabelledStub(port: SourcePort, pin: SchematicPort, net: string) {
+    const index = this.network
+    const sourceTraces = this.ctx.circuitJson.filter(
+      (e) =>
+        e.type === "source_trace" &&
+        e.connected_source_port_ids.length === 1 &&
+        e.connected_source_port_ids[0] === port.source_port_id &&
+        e.connected_source_net_ids.length > 0 &&
+        e.connected_source_net_ids.every((id) => index.connected(id) === net),
+    )
+    const traceIds = new Set(
+      sourceTraces.flatMap((t) =>
+        t.type === "source_trace" ? [t.source_trace_id] : [],
+      ),
+    )
+    const stubs = this.schematicTraces.filter(
+      (t) =>
+        t.schematic_sheet_id === pin.schematic_sheet_id &&
+        t.source_trace_id &&
+        traceIds.has(t.source_trace_id) &&
+        !t.junctions?.length &&
+        t.edges.some(
+          (e) =>
+            DiodeResistorAlignmentSolver.dist(e.from, pin.center) < 0.01 ||
+            DiodeResistorAlignmentSolver.dist(e.to, pin.center) < 0.01,
+        ),
+    )
+    return this.ctx.circuitJson.some((e) => {
+      if (
+        e.type === "schematic_text" &&
+        e.schematic_sheet_id === pin.schematic_sheet_id &&
+        "source_trace_id" in e &&
+        typeof e.source_trace_id === "string"
+      )
+        return stubs.some((t) => t.source_trace_id === e.source_trace_id)
+      if (
+        e.type !== "schematic_net_label" ||
+        e.symbol_name ||
+        e.schematic_sheet_id !== pin.schematic_sheet_id ||
+        !e.source_net_id ||
+        index.connected(e.source_net_id) !== net
+      )
+        return false
+      const p = e.anchor_position ?? e.center
+      return (
+        DiodeResistorAlignmentSolver.dist(p, pin.center) < 0.01 ||
+        stubs.some((t) =>
+          t.edges.some(
+            (edge) =>
+              Math.abs(
+                DiodeResistorAlignmentSolver.dist(edge.from, p) +
+                  DiodeResistorAlignmentSolver.dist(p, edge.to) -
+                  DiodeResistorAlignmentSolver.dist(edge.from, edge.to),
+              ) < 1e-6,
+          ),
+        )
+      )
+    })
   }
 
   private static isCoLinear(

@@ -23,7 +23,9 @@ test("reproduces the published PA25 labelled LED resistor branches", async () =>
       ])
     }
     const analysis = analyzeSchematicPlacement(json)
-    expect(analysis.getIssues()).toEqual([])
+    expect(analysis.getIssues().map((i) => i.lineItemType)).toEqual(
+      Array(single ? 1 : 3).fill("DiodeResistorNotAligned"),
+    )
     expect(
       createIssueReproSnapshot({
         circuitJson: json,
