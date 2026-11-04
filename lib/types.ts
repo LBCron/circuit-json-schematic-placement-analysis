@@ -141,6 +141,17 @@ export interface FuseMosfetNotAligned {
   message: string
 }
 
+export interface ChipDiodeCapacitorNetworkNotGrouped {
+  lineItemType: "ChipDiodeCapacitorNetworkNotGrouped"
+  hostSchematicBox: SchematicBoxPlacement
+  diodeSchematicBox: SchematicBoxPlacement
+  capacitorSchematicBox: SchematicBoxPlacement
+  chipSourcePortIds: [string, string, string]
+  maxPinDistance: number
+  maxRecommendedPinDistance: number
+  message: string
+}
+
 export interface FuseDiodeNotAligned {
   lineItemType: "FuseDiodeNotAligned"
   fuseSchematicBox: SchematicBoxPlacement
@@ -949,6 +960,7 @@ export type SchematicPlacementIssue =
   | CapacitorSeparatedFromResistorDivider
   | SeriesResistorsNotAligned
   | FuseMosfetNotAligned
+  | ChipDiodeCapacitorNetworkNotGrouped
   | FuseDiodeNotAligned
   | InductorSeparatedFromChipPins
   | SwitchMatrixBranchesTooSpreadOut

@@ -122,6 +122,11 @@ export const getRelevantPlacementsForIssues = ({
         addPlacement(issue.fuseSchematicBox)
         addPlacement(issue.mosfetSchematicBox)
         break
+      case "ChipDiodeCapacitorNetworkNotGrouped":
+        addPlacement(issue.hostSchematicBox)
+        addPlacement(issue.diodeSchematicBox)
+        addPlacement(issue.capacitorSchematicBox)
+        break
       case "FuseDiodeNotAligned":
         addPlacement(issue.fuseSchematicBox)
         addPlacement(issue.diodeSchematicBox)

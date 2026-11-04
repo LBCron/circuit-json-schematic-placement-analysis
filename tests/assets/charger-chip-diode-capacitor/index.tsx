@@ -6,17 +6,20 @@
 import { Circuit } from "@tscircuit/core"
 import { BQ24610 } from "./imports/BQ24610"
 import { B5819W_SL } from "./imports/B5819W_SL"
-export async function createChargerChipDiodeCapacitor() {
+export async function createChargerChipDiodeCapacitor(after = false) {
   const c = new Circuit()
   c.pcbDisabled = true
   c.add(
-    <board schLayout={{ layoutMode: "none" }} schMaxTraceDistance={undefined}>
+    <board
+      schLayout={{ layoutMode: "none" }}
+      schMaxTraceDistance={after ? 100 : undefined}
+    >
       <BQ24610 name="U2" schX={4} schY={0} />
       <B5819W_SL
         name="D2"
-        schX={9}
-        schY={5}
-        schRotation={0}
+        schX={after ? 8 : 9}
+        schY={after ? 0.8 : 5}
+        schRotation={after ? 90 : 0}
         footprint={
           <footprint>
             <smtpad
@@ -43,8 +46,8 @@ export async function createChargerChipDiodeCapacitor() {
         supplierPartNumbers={{ jlcpcb: ["C14663", "C1591", "C91183"] }}
         capacitance="100nF"
         footprint="0603"
-        schX={10}
-        schY={6}
+        schX={after ? 6.5 : 10}
+        schY={after ? 1.5 : 6}
         schRotation={-90}
       />
       <capacitor
@@ -52,8 +55,8 @@ export async function createChargerChipDiodeCapacitor() {
         supplierPartNumbers={{ jlcpcb: ["C15849", "C5673", "C5199872"] }}
         capacitance="1uF"
         footprint="0603"
-        schX={9}
-        schY={-2}
+        schX={after ? 8 : 9}
+        schY={after ? -1.3 : -2}
         schRotation={-90}
       />
       <trace from="U2.VCC" to="net.VCC_CHG" />

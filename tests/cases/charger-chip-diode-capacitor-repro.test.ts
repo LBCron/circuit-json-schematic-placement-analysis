@@ -25,7 +25,9 @@ test("reproduces the published charger-chip-diode-capacitor positions and retain
     ["U2.GND", "U2.EP", "C5.pin2", "net.GND"],
   ])
   const analysis = analyzeSchematicPlacement(json)
-  expect(analysis.getIssues().map((i) => i.lineItemType)).toEqual([])
+  expect(analysis.getIssues().map((i) => i.lineItemType)).toEqual([
+    "ChipDiodeCapacitorNetworkNotGrouped",
+  ])
   expect(
     createIssueReproSnapshot({
       circuitJson: json,
