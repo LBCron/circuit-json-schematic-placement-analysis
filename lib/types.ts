@@ -1,3 +1,12 @@
+export interface ChipPinTestPointNotAligned {
+  lineItemType: "ChipPinTestPointNotAligned"
+  chipSchematicBox: SchematicBoxPlacement
+  testPointSchematicBox: SchematicBoxPlacement
+  chipSourcePortId: string
+  testPointSourcePortId: string
+  message: string
+}
+
 export interface InductorDiodeNotGrouped {
   lineItemType: "InductorDiodeNotGrouped"
   hostSchematicBox: SchematicBoxPlacement
@@ -907,6 +916,7 @@ export interface SwitchMatrixBranchesTooSpreadOut {
 export type SchematicPlacementIssue =
   | InductorDiodeNotGrouped
   | ResistorDividerSeparatedFromChip
+  | ChipPinTestPointNotAligned
   | ConnectorTestPointNotAligned
   | InductorCapacitorNotGrouped
   | ResistorTestPointNotAligned

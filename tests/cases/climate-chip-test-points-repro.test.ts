@@ -22,7 +22,10 @@ test("reproduces the published climate-chip-test-points positions and missed con
     ["U1.TXD0", "TP10.pin1"],
   ])
   const analysis = analyzeSchematicPlacement(json)
-  expect(analysis.getIssues()).toEqual([])
+  expect(analysis.getIssues().map((i) => i.lineItemType)).toEqual([
+    "ChipPinTestPointNotAligned",
+    "ChipPinTestPointNotAligned",
+  ])
   expect(
     createIssueReproSnapshot({
       circuitJson: json,

@@ -4,14 +4,14 @@
 // Other chip connections are outside this extract.
 import { Circuit } from "@tscircuit/core"
 import { ESP32_C3_MINI_1_N4 } from "./ESP32_C3_MINI_1_N4"
-export async function createClimateChipTestPoints() {
+export async function createClimateChipTestPoints(corrected = false) {
   const circuit = new Circuit()
   circuit.pcbDisabled = true
   circuit.add(
     <board
       schLayout={{ layoutMode: "none" }}
       schTraceAutoLabelEnabled
-      schMaxTraceDistance={2}
+      schMaxTraceDistance={corrected ? 100 : 2}
     >
       <ESP32_C3_MINI_1_N4
         name="U1"
@@ -28,16 +28,18 @@ export async function createClimateChipTestPoints() {
         footprintVariant="pad"
         padShape="circle"
         padDiameter="1.2mm"
-        schX={-1}
-        schY={5}
+        schX={corrected ? -4 : -1}
+        schY={corrected ? -2.8 : 5}
+        schRotation={corrected ? 180 : 0}
       />
       <testpoint
         name="TP10"
         footprintVariant="pad"
         padShape="circle"
         padDiameter="1.2mm"
-        schX={2}
-        schY={5}
+        schX={corrected ? -6 : 2}
+        schY={corrected ? -3 : 5}
+        schRotation={corrected ? 180 : 0}
       />
       <trace name="T_TP9__UART_RX" from="TP9.pin1" to="U1.RXD0" />
       <trace name="T_TP10__UART_TX" from="TP10.pin1" to="U1.TXD0" />
