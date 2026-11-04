@@ -1,4 +1,5 @@
 import { ChipPinTestPointAlignmentSolver } from "../ChipPinTestPointAlignmentSolver/ChipPinTestPointAlignmentSolver"
+import { CapacitorConnectorAlignmentSolver } from "../CapacitorConnectorAlignmentSolver/CapacitorConnectorAlignmentSolver"
 import { InductorDiodeGroupingSolver } from "../InductorDiodeGroupingSolver/InductorDiodeGroupingSolver"
 import { ChipPinResistorDividerPlacementSolver } from "../ChipPinResistorDividerPlacementSolver/ChipPinResistorDividerPlacementSolver"
 import { RrcTimingNetworkGroupingSolver } from "../RrcTimingNetworkGroupingSolver/RrcTimingNetworkGroupingSolver"
@@ -88,6 +89,7 @@ type SolverParams = {
 // Include prerequisites used when deduplicating findings in getOutput().
 const solversByIssueType = {
   ChipPinTestPointNotAligned: [ChipPinTestPointAlignmentSolver],
+  CapacitorConnectorNotAligned: [CapacitorConnectorAlignmentSolver],
   ConnectorTestPointNotAligned: [ConnectorTestPointAlignmentSolver],
   InductorDiodeNotGrouped: [InductorDiodeGroupingSolver],
   InductorCapacitorNotGrouped: [InductorCapacitorGroupingSolver],
@@ -620,6 +622,13 @@ export class SchematicPlacementPipeline extends BasePipelineSolver<CircuitJson> 
     definePipelineStep(
       "ResistorTestPointAlignmentSolver",
       ResistorTestPointAlignmentSolver,
+      (p: SchematicPlacementPipeline): [SolverParams] => [
+        { ctx: p.ctx, issues: p.issues },
+      ],
+    ),
+    definePipelineStep(
+      "CapacitorConnectorAlignmentSolver",
+      CapacitorConnectorAlignmentSolver,
       (p: SchematicPlacementPipeline): [SolverParams] => [
         { ctx: p.ctx, issues: p.issues },
       ],

@@ -70,6 +70,10 @@ export const getRelevantPlacementsForIssues = ({
         addPlacement(issue.chipSchematicBox)
         addPlacement(issue.testPointSchematicBox)
         break
+      case "CapacitorConnectorNotAligned":
+        addPlacement(issue.connectorSchematicBox)
+        addPlacement(issue.capacitorSchematicBox)
+        break
       case "ConnectorTestPointNotAligned":
         addPlacement(issue.connectorSchematicBox)
         addPlacement(issue.testPointSchematicBox)

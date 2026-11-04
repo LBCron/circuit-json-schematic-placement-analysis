@@ -30,12 +30,13 @@ test("reproduces ground-above-signal capacitors from the published quad sensor b
     ["full-sheet", full],
   ] as const) {
     const analysis = analyzeSchematicPlacement(json)
-    expect(analysis.getIssues()).toHaveLength(name === "filter" ? 1 : 8)
+    expect(analysis.getIssues()).toHaveLength(name === "filter" ? 1 : 12)
     expect(
-      analysis
-        .getIssues()
-        .every((i) => i.lineItemType === "TwoPinComponentHasInvertedRails"),
-    ).toBe(true)
+      analysis.getIssues({ issueTypes: ["TwoPinComponentHasInvertedRails"] }),
+    ).toHaveLength(name === "filter" ? 1 : 8)
+    expect(
+      analysis.getIssues({ issueTypes: ["CapacitorConnectorNotAligned"] }),
+    ).toHaveLength(name === "filter" ? 0 : 4)
     expect(
       createIssueReproSnapshot({
         circuitJson: json,

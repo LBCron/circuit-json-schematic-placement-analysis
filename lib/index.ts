@@ -1,4 +1,5 @@
 export { ChipPinTestPointAlignmentSolver } from "./solvers/ChipPinTestPointAlignmentSolver/ChipPinTestPointAlignmentSolver"
+export { CapacitorConnectorAlignmentSolver } from "./solvers/CapacitorConnectorAlignmentSolver/CapacitorConnectorAlignmentSolver"
 export { RrcTimingNetworkGroupingSolver } from "./solvers/RrcTimingNetworkGroupingSolver/RrcTimingNetworkGroupingSolver"
 export { ConnectorTestPointAlignmentSolver } from "./solvers/ConnectorTestPointAlignmentSolver/ConnectorTestPointAlignmentSolver"
 export { InductorCapacitorGroupingSolver } from "./solvers/InductorCapacitorGroupingSolver/InductorCapacitorGroupingSolver"

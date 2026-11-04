@@ -90,3 +90,22 @@ export function expectVisibleConnection(
   }
   expect(reached.has(key(end))).toBe(true)
 }
+
+/** Rotating a symbol can reorder generated port IDs; retain physical pin identity. */
+export function electricalPinSignature(json: CircuitJson) {
+  const signature = electricalSignature(json)
+  const pinKey = new Map(
+    signature.ports.map((p) => [p.id, `${p.componentId}.${p.pin}`]),
+  )
+  return {
+    components: signature.components,
+    ports: signature.ports
+      .map(({ id, peers, ...p }) => ({
+        ...p,
+        peers: peers.map((id) => pinKey.get(id)).sort(),
+      }))
+      .sort((a, b) =>
+        `${a.componentId}.${a.pin}`.localeCompare(`${b.componentId}.${b.pin}`),
+      ),
+  }
+}

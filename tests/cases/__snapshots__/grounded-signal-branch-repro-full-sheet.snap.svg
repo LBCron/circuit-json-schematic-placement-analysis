@@ -1,4 +1,4 @@
-<svg width="1400" height="1828" viewBox="0 0 1400 1828" xmlns="http://www.w3.org/2000/svg">
+<svg width="1400" height="2202" viewBox="0 0 1400 2202" xmlns="http://www.w3.org/2000/svg">
   <g transform="translate(0, 0)">
     <svg xmlns="http://www.w3.org/2000/svg" class="tscircuit-schematic" width="1400" height="1000" style="background-color: rgb(245, 241, 237)" data-real-to-screen-transform="matrix(27.2628135224,0,0,-27.2628135224,733.2470010905,371.5921483097)" data-software-used-string="@tscircuit/core@0.0.2132"><style>
               .boundary { fill: rgb(245, 241, 237); }
@@ -39,6 +39,10 @@
 
 
 
+
+
+
+
 <g data-issue-number="1" data-issue-type="TwoPinComponentHasInvertedRails" transform="translate(224.7955288977401 37.89094874538) scale(1)"><title>#1 TwoPinComponentHasInvertedRails
 &lt;TwoPinComponentHasInvertedRails componentName=&quot;C11&quot; railPin=&quot;pin2&quot; railType=&quot;ground&quot; deltaSchRotation=&quot;180&quot; suggestedRailFacingDirection=&quot;down&quot; message=&quot;rotate C11 by 180° so its ground pin faces down and its signal pin faces up; preserve pin connections and reroute attached traces&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">1</text></g>
 <g data-issue-number="2" data-issue-type="TwoPinComponentHasInvertedRails" transform="translate(163.45419847234007 201.46782987978003) scale(1)"><title>#2 TwoPinComponentHasInvertedRails
@@ -54,15 +58,32 @@
 <g data-issue-number="7" data-issue-type="TwoPinComponentHasInvertedRails" transform="translate(1315.30806979374 37.89094874538) scale(1)"><title>#7 TwoPinComponentHasInvertedRails
 &lt;TwoPinComponentHasInvertedRails componentName=&quot;C14&quot; railPin=&quot;pin2&quot; railType=&quot;ground&quot; deltaSchRotation=&quot;180&quot; suggestedRailFacingDirection=&quot;down&quot; message=&quot;rotate C14 by 180° so its ground pin faces down and its signal pin faces up; preserve pin connections and reroute attached traces&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">7</text></g>
 <g data-issue-number="8" data-issue-type="TwoPinComponentHasInvertedRails" transform="translate(1253.9667393683399 201.46782987978003) scale(1)"><title>#8 TwoPinComponentHasInvertedRails
-&lt;TwoPinComponentHasInvertedRails componentName=&quot;C34&quot; railPin=&quot;pin2&quot; railType=&quot;ground&quot; deltaSchRotation=&quot;180&quot; suggestedRailFacingDirection=&quot;down&quot; message=&quot;rotate C34 by 180° so its ground pin faces down and its signal pin faces up; preserve pin connections and reroute attached traces&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">8</text></g></g></svg>
+&lt;TwoPinComponentHasInvertedRails componentName=&quot;C34&quot; railPin=&quot;pin2&quot; railType=&quot;ground&quot; deltaSchRotation=&quot;180&quot; suggestedRailFacingDirection=&quot;down&quot; message=&quot;rotate C34 by 180° so its ground pin faces down and its signal pin faces up; preserve pin connections and reroute attached traces&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">8</text></g>
+<g data-issue-number="9" data-issue-type="CapacitorConnectorNotAligned" transform="translate(163.45419847234007 119.67938931258001) scale(1)"><title>#9 CapacitorConnectorNotAligned
+&lt;CapacitorConnectorNotAligned connectorName=&quot;JP1&quot; capacitorName=&quot;C21&quot; message=&quot;Move C21 onto the side of its connected pin on JP1, with a short visible connection. Keep the connector symbol and pin order unchanged. Preserve capacitance, polarity and all pin connections, leave room for labels and neighboring parts, and reroute affected traces.&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">9</text></g>
+<g data-issue-number="9" data-issue-type="CapacitorConnectorNotAligned" transform="translate(216.61668484102006 119.67938931258001) scale(1)"><title>#9 CapacitorConnectorNotAligned
+&lt;CapacitorConnectorNotAligned connectorName=&quot;JP1&quot; capacitorName=&quot;C21&quot; message=&quot;Move C21 onto the side of its connected pin on JP1, with a short visible connection. Keep the connector symbol and pin order unchanged. Preserve capacitance, polarity and all pin connections, leave room for labels and neighboring parts, and reroute affected traces.&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">9</text></g>
+<g data-issue-number="10" data-issue-type="CapacitorConnectorNotAligned" transform="translate(163.45419847234007 583.14721919338) scale(1)"><title>#10 CapacitorConnectorNotAligned
+&lt;CapacitorConnectorNotAligned connectorName=&quot;JP2&quot; capacitorName=&quot;C22&quot; message=&quot;Move C22 onto the side of its connected pin on JP2, with a short visible connection. Keep the connector symbol and pin order unchanged. Preserve capacitance, polarity and all pin connections, leave room for labels and neighboring parts, and reroute affected traces.&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">10</text></g>
+<g data-issue-number="10" data-issue-type="CapacitorConnectorNotAligned" transform="translate(216.61668484102006 583.14721919338) scale(1)"><title>#10 CapacitorConnectorNotAligned
+&lt;CapacitorConnectorNotAligned connectorName=&quot;JP2&quot; capacitorName=&quot;C22&quot; message=&quot;Move C22 onto the side of its connected pin on JP2, with a short visible connection. Keep the connector symbol and pin order unchanged. Preserve capacitance, polarity and all pin connections, leave room for labels and neighboring parts, and reroute affected traces.&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">10</text></g>
+<g data-issue-number="11" data-issue-type="CapacitorConnectorNotAligned" transform="translate(1253.9667393683399 583.14721919338) scale(1)"><title>#11 CapacitorConnectorNotAligned
+&lt;CapacitorConnectorNotAligned connectorName=&quot;JP3&quot; capacitorName=&quot;C23&quot; message=&quot;Move C23 onto the side of its connected pin on JP3, with a short visible connection. Keep the connector symbol and pin order unchanged. Preserve capacitance, polarity and all pin connections, leave room for labels and neighboring parts, and reroute affected traces.&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">11</text></g>
+<g data-issue-number="11" data-issue-type="CapacitorConnectorNotAligned" transform="translate(1307.12922573702 583.14721919338) scale(1)"><title>#11 CapacitorConnectorNotAligned
+&lt;CapacitorConnectorNotAligned connectorName=&quot;JP3&quot; capacitorName=&quot;C23&quot; message=&quot;Move C23 onto the side of its connected pin on JP3, with a short visible connection. Keep the connector symbol and pin order unchanged. Preserve capacitance, polarity and all pin connections, leave room for labels and neighboring parts, and reroute affected traces.&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">11</text></g>
+<g data-issue-number="12" data-issue-type="CapacitorConnectorNotAligned" transform="translate(1253.9667393683399 119.67938931258001) scale(1)"><title>#12 CapacitorConnectorNotAligned
+&lt;CapacitorConnectorNotAligned connectorName=&quot;JP4&quot; capacitorName=&quot;C24&quot; message=&quot;Move C24 onto the side of its connected pin on JP4, with a short visible connection. Keep the connector symbol and pin order unchanged. Preserve capacitance, polarity and all pin connections, leave room for labels and neighboring parts, and reroute affected traces.&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">12</text></g>
+<g data-issue-number="12" data-issue-type="CapacitorConnectorNotAligned" transform="translate(1307.12922573702 119.67938931258001) scale(1)"><title>#12 CapacitorConnectorNotAligned
+&lt;CapacitorConnectorNotAligned connectorName=&quot;JP4&quot; capacitorName=&quot;C24&quot; message=&quot;Move C24 onto the side of its connected pin on JP4, with a short visible connection. Keep the connector symbol and pin order unchanged. Preserve capacitance, polarity and all pin connections, leave room for labels and neighboring parts, and reroute affected traces.&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">12</text></g></g></svg>
   </g>
   <g transform="translate(0, 1000) scale(1, 1) translate(0, 0)">
     <rect width="100%" height="100%" fill="#fff" />
 <text x="52" y="40" fill="#d00" font-family="Menlo, Consolas, monospace" font-size="16">
 <tspan x="52" dy="0">Emitted issue counts (all sheets):</tspan>
+<tspan x="52" dy="22">CapacitorConnectorNotAligned: 4</tspan>
 <tspan x="52" dy="22">TwoPinComponentHasInvertedRails: 8</tspan>
 <tspan x="52" dy="22">Selected type(s): all</tspan>
-<tspan x="52" dy="22">Matching issues: 8</tspan>
+<tspan x="52" dy="22">Matching issues: 12</tspan>
 <tspan x="52" dy="22">&lt;TwoPinComponentHasInvertedRails componentName=&quot;C11&quot; railPin=&quot;pin2&quot; railType=&quot;ground&quot;</tspan>
 <tspan x="52" dy="22">  deltaSchRotation=&quot;180&quot; suggestedRailFacingDirection=&quot;down&quot; message=&quot;rotate C11 by 180° so its</tspan>
 <tspan x="52" dy="22">  ground pin faces down and its signal pin faces up; preserve pin connections and reroute</tspan>
@@ -95,14 +116,34 @@
 <tspan x="52" dy="22">  deltaSchRotation=&quot;180&quot; suggestedRailFacingDirection=&quot;down&quot; message=&quot;rotate C34 by 180° so its</tspan>
 <tspan x="52" dy="22">  ground pin faces down and its signal pin faces up; preserve pin connections and reroute</tspan>
 <tspan x="52" dy="22">  attached traces&quot; /&gt;</tspan>
+<tspan x="52" dy="22">&lt;CapacitorConnectorNotAligned connectorName=&quot;JP1&quot; capacitorName=&quot;C21&quot; message=&quot;Move C21 onto the</tspan>
+<tspan x="52" dy="22">  side of its connected pin on JP1, with a short visible connection. Keep the connector symbol</tspan>
+<tspan x="52" dy="22">  and pin order unchanged. Preserve capacitance, polarity and all pin connections, leave room</tspan>
+<tspan x="52" dy="22">  for labels and neighboring parts, and reroute affected traces.&quot; /&gt;</tspan>
+<tspan x="52" dy="22">&lt;CapacitorConnectorNotAligned connectorName=&quot;JP2&quot; capacitorName=&quot;C22&quot; message=&quot;Move C22 onto the</tspan>
+<tspan x="52" dy="22">  side of its connected pin on JP2, with a short visible connection. Keep the connector symbol</tspan>
+<tspan x="52" dy="22">  and pin order unchanged. Preserve capacitance, polarity and all pin connections, leave room</tspan>
+<tspan x="52" dy="22">  for labels and neighboring parts, and reroute affected traces.&quot; /&gt;</tspan>
+<tspan x="52" dy="22">&lt;CapacitorConnectorNotAligned connectorName=&quot;JP3&quot; capacitorName=&quot;C23&quot; message=&quot;Move C23 onto the</tspan>
+<tspan x="52" dy="22">  side of its connected pin on JP3, with a short visible connection. Keep the connector symbol</tspan>
+<tspan x="52" dy="22">  and pin order unchanged. Preserve capacitance, polarity and all pin connections, leave room</tspan>
+<tspan x="52" dy="22">  for labels and neighboring parts, and reroute affected traces.&quot; /&gt;</tspan>
+<tspan x="52" dy="22">&lt;CapacitorConnectorNotAligned connectorName=&quot;JP4&quot; capacitorName=&quot;C24&quot; message=&quot;Move C24 onto the</tspan>
+<tspan x="52" dy="22">  side of its connected pin on JP4, with a short visible connection. Keep the connector symbol</tspan>
+<tspan x="52" dy="22">  and pin order unchanged. Preserve capacitance, polarity and all pin connections, leave room</tspan>
+<tspan x="52" dy="22">  for labels and neighboring parts, and reroute affected traces.&quot; /&gt;</tspan>
 </text>
-<g data-listing-issue-number="1"><circle cx="24" cy="123" r="11" fill="#b91c1c" /><text x="24" y="123" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">1</text></g>
-<g data-listing-issue-number="2"><circle cx="24" cy="211" r="11" fill="#b91c1c" /><text x="24" y="211" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">2</text></g>
-<g data-listing-issue-number="3"><circle cx="24" cy="299" r="11" fill="#b91c1c" /><text x="24" y="299" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">3</text></g>
-<g data-listing-issue-number="4"><circle cx="24" cy="387" r="11" fill="#b91c1c" /><text x="24" y="387" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">4</text></g>
-<g data-listing-issue-number="5"><circle cx="24" cy="475" r="11" fill="#b91c1c" /><text x="24" y="475" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">5</text></g>
-<g data-listing-issue-number="6"><circle cx="24" cy="563" r="11" fill="#b91c1c" /><text x="24" y="563" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">6</text></g>
-<g data-listing-issue-number="7"><circle cx="24" cy="651" r="11" fill="#b91c1c" /><text x="24" y="651" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">7</text></g>
-<g data-listing-issue-number="8"><circle cx="24" cy="739" r="11" fill="#b91c1c" /><text x="24" y="739" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">8</text></g>
+<g data-listing-issue-number="1"><circle cx="24" cy="145" r="11" fill="#b91c1c" /><text x="24" y="145" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">1</text></g>
+<g data-listing-issue-number="2"><circle cx="24" cy="233" r="11" fill="#b91c1c" /><text x="24" y="233" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">2</text></g>
+<g data-listing-issue-number="3"><circle cx="24" cy="321" r="11" fill="#b91c1c" /><text x="24" y="321" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">3</text></g>
+<g data-listing-issue-number="4"><circle cx="24" cy="409" r="11" fill="#b91c1c" /><text x="24" y="409" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">4</text></g>
+<g data-listing-issue-number="5"><circle cx="24" cy="497" r="11" fill="#b91c1c" /><text x="24" y="497" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">5</text></g>
+<g data-listing-issue-number="6"><circle cx="24" cy="585" r="11" fill="#b91c1c" /><text x="24" y="585" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">6</text></g>
+<g data-listing-issue-number="7"><circle cx="24" cy="673" r="11" fill="#b91c1c" /><text x="24" y="673" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">7</text></g>
+<g data-listing-issue-number="8"><circle cx="24" cy="761" r="11" fill="#b91c1c" /><text x="24" y="761" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">8</text></g>
+<g data-listing-issue-number="9"><circle cx="24" cy="849" r="11" fill="#b91c1c" /><text x="24" y="849" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">9</text></g>
+<g data-listing-issue-number="10"><circle cx="24" cy="937" r="11" fill="#b91c1c" /><text x="24" y="937" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">10</text></g>
+<g data-listing-issue-number="11"><circle cx="24" cy="1025" r="11" fill="#b91c1c" /><text x="24" y="1025" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">11</text></g>
+<g data-listing-issue-number="12"><circle cx="24" cy="1113" r="11" fill="#b91c1c" /><text x="24" y="1113" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">12</text></g>
   </g>
 </svg>

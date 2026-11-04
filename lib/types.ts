@@ -7,6 +7,15 @@ export interface ChipPinTestPointNotAligned {
   message: string
 }
 
+export interface CapacitorConnectorNotAligned {
+  lineItemType: "CapacitorConnectorNotAligned"
+  connectorSchematicBox: SchematicBoxPlacement
+  capacitorSchematicBox: SchematicBoxPlacement
+  connectorSourcePortId: string
+  capacitorSourcePortId: string
+  message: string
+}
+
 export interface InductorDiodeNotGrouped {
   lineItemType: "InductorDiodeNotGrouped"
   hostSchematicBox: SchematicBoxPlacement
@@ -917,6 +926,7 @@ export type SchematicPlacementIssue =
   | InductorDiodeNotGrouped
   | ResistorDividerSeparatedFromChip
   | ChipPinTestPointNotAligned
+  | CapacitorConnectorNotAligned
   | ConnectorTestPointNotAligned
   | InductorCapacitorNotGrouped
   | ResistorTestPointNotAligned

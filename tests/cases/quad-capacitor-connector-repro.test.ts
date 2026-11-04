@@ -22,7 +22,9 @@ test("reproduces the published quad-capacitor-connector positions and missed con
     ["JP1.pin2", "net.GND"],
   ])
   const analysis = analyzeSchematicPlacement(json)
-  expect(analysis.getIssues()).toEqual([])
+  expect(analysis.getIssues().map((i) => i.lineItemType)).toEqual([
+    "CapacitorConnectorNotAligned",
+  ])
   expect(
     createIssueReproSnapshot({
       circuitJson: json,

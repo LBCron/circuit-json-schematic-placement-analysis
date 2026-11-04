@@ -3,22 +3,22 @@
 // Channel 1 jumper/filter branch, translated by (+20, -8.5) from the source.
 // C21's FILTER1 terminal retains its connection to the surrounding filter.
 import { Circuit } from "@tscircuit/core"
-export async function createQuadCapacitorConnector() {
+export async function createQuadCapacitorConnector(corrected = false) {
   const circuit = new Circuit()
   circuit.pcbDisabled = true
   circuit.add(
     <board
       schLayout={{ layoutMode: "none" }}
       schTraceAutoLabelEnabled
-      schMaxTraceDistance={2}
+      schMaxTraceDistance={corrected ? 100 : 2}
     >
       <capacitor
         name="C21"
         capacitance="1uF"
         footprint="0805"
-        schX={-0.45}
-        schY={0}
-        schRotation={90}
+        schX={corrected ? 4.5 : -0.45}
+        schY={corrected ? 0.1 : 0}
+        schRotation={corrected ? 180 : 90}
       />
       <pinheader
         name="JP1"

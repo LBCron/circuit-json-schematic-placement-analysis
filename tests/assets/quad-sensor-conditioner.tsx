@@ -208,9 +208,9 @@ export default function QuadSensorConditioner({
               footprint="0805"
               pcbX={side * 17}
               pcbY={y}
-              schX={sx - 0.45}
-              schY={sy - 1.5}
-              schRotation={90}
+              schX={after ? sx + 4.5 : sx - 0.45}
+              schY={after ? sy - 1.4 : sy - 1.5}
+              schRotation={after ? 180 : 90}
               schSectionName={`CH${n}`}
             />
             <pinheader

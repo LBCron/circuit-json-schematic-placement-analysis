@@ -1,4 +1,5 @@
 import { ChipPinTestPointAlignmentSolver } from "./solvers/ChipPinTestPointAlignmentSolver/ChipPinTestPointAlignmentSolver"
+import { CapacitorConnectorAlignmentSolver } from "./solvers/CapacitorConnectorAlignmentSolver/CapacitorConnectorAlignmentSolver"
 import { InductorDiodeGroupingSolver } from "./solvers/InductorDiodeGroupingSolver/InductorDiodeGroupingSolver"
 import { ChipPinResistorDividerPlacementSolver } from "./solvers/ChipPinResistorDividerPlacementSolver/ChipPinResistorDividerPlacementSolver"
 import { RrcTimingNetworkGroupingSolver } from "./solvers/RrcTimingNetworkGroupingSolver/RrcTimingNetworkGroupingSolver"
@@ -119,6 +120,7 @@ export class SchematicPlacementAnalysis {
   getIssueCounts(filter: { schematicSheetId?: string } = {}) {
     const counts = {
       ChipPinTestPointNotAligned: 0,
+      CapacitorConnectorNotAligned: 0,
       ConnectorTestPointNotAligned: 0,
       InductorDiodeNotGrouped: 0,
       InductorCapacitorNotGrouped: 0,
@@ -217,6 +219,8 @@ export class SchematicPlacementAnalysis {
     switch (issue.lineItemType) {
       case "ChipPinTestPointNotAligned":
         return ChipPinTestPointAlignmentSolver.issueToString(issue)
+      case "CapacitorConnectorNotAligned":
+        return CapacitorConnectorAlignmentSolver.issueToString(issue)
       case "ConnectorTestPointNotAligned":
         return ConnectorTestPointAlignmentSolver.issueToString(issue)
       case "InductorDiodeNotGrouped":

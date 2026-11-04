@@ -5,16 +5,12 @@ import { createGroundedSignalBranch } from "../assets/grounded-signal-branch"
 import { createQuadSensorConditioner } from "../assets/quad-sensor-conditioner"
 import { createPlacementComparisonSvg } from "../fixtures/create-placement-comparison-svg"
 import { createSectionedSchematicSnapshot } from "../fixtures/create-sectioned-schematic-snapshot"
+import {
+  electricalPinSignature,
+  expectVisibleConnection,
+} from "../fixtures/placement-correction-assertions"
 import { expectReproRendered } from "../fixtures/placement-repro-assertions"
 
-const electrical = (j: CircuitJson) =>
-  j
-    .filter((e) => e.type.startsWith("source_") && !e.type.endsWith("_warning"))
-    .map((e) =>
-      e.type === "source_port"
-        ? { ...e, port_hints: [...(e.port_hints ?? [])].sort() }
-        : e,
-    )
 const fixedSymbols = (j: CircuitJson) => {
   const ids = new Set(
     j.flatMap((e) =>
@@ -54,12 +50,17 @@ test("turns ground pins downward without changing circuit topology or fixed symb
     const before = await build(),
       after = await build(true)
     expectReproRendered(after, full ? 38 : 3)
-    expect(electrical(after)).toEqual(electrical(before))
+    expect(electricalPinSignature(after)).toEqual(
+      electricalPinSignature(before),
+    )
     expect(fixedSymbols(after)).toEqual(fixedSymbols(before))
     const analysis = analyzeSchematicPlacement(before),
       corrected = analyzeSchematicPlacement(after)
-    expect(analysis.getIssues()).toHaveLength(full ? 8 : 1)
+    expect(analysis.getIssues()).toHaveLength(full ? 12 : 1)
     expect(corrected.getIssues()).toEqual([])
+    if (full)
+      for (let n = 1; n <= 4; n++)
+        expectVisibleConnection(after, `JP${n}`, "pin1", `C2${n}`, "pin2")
     if (!full) {
       expect(
         createPlacementComparisonSvg({
