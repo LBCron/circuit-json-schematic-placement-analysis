@@ -1,6 +1,6 @@
 {
   "name": "@tscircuit/circuit-json-schematic-placement-analysis",
-  "version": "0.0.88",
+  "version": "0.0.90",
   "type": "module",
   "main": "lib/index.ts",
   "module": "lib/index.ts",
