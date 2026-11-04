@@ -130,6 +130,17 @@ export interface SeriesResistorsNotAligned {
   message: string
 }
 
+export interface FuseMosfetNotAligned {
+  lineItemType: "FuseMosfetNotAligned"
+  fuseSchematicBox: SchematicBoxPlacement
+  mosfetSchematicBox: SchematicBoxPlacement
+  fuseSourcePortId: string
+  mosfetSourcePortId: string
+  pinDistance: number
+  maxRecommendedPinDistance: number
+  message: string
+}
+
 export interface FuseDiodeNotAligned {
   lineItemType: "FuseDiodeNotAligned"
   fuseSchematicBox: SchematicBoxPlacement
@@ -937,6 +948,7 @@ export type SchematicPlacementIssue =
   | PotentiometerHasIncorrectRailOrientation
   | CapacitorSeparatedFromResistorDivider
   | SeriesResistorsNotAligned
+  | FuseMosfetNotAligned
   | FuseDiodeNotAligned
   | InductorSeparatedFromChipPins
   | SwitchMatrixBranchesTooSpreadOut

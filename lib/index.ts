@@ -1,3 +1,4 @@
+export { FuseMosfetAlignmentSolver } from "./solvers/FuseMosfetAlignmentSolver/FuseMosfetAlignmentSolver"
 export { ChipPinTestPointAlignmentSolver } from "./solvers/ChipPinTestPointAlignmentSolver/ChipPinTestPointAlignmentSolver"
 export { CapacitorConnectorAlignmentSolver } from "./solvers/CapacitorConnectorAlignmentSolver/CapacitorConnectorAlignmentSolver"
 export { RrcTimingNetworkGroupingSolver } from "./solvers/RrcTimingNetworkGroupingSolver/RrcTimingNetworkGroupingSolver"

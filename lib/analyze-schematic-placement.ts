@@ -1,3 +1,4 @@
+import { FuseMosfetAlignmentSolver } from "./solvers/FuseMosfetAlignmentSolver/FuseMosfetAlignmentSolver"
 import { ChipPinTestPointAlignmentSolver } from "./solvers/ChipPinTestPointAlignmentSolver/ChipPinTestPointAlignmentSolver"
 import { CapacitorConnectorAlignmentSolver } from "./solvers/CapacitorConnectorAlignmentSolver/CapacitorConnectorAlignmentSolver"
 import { InductorDiodeGroupingSolver } from "./solvers/InductorDiodeGroupingSolver/InductorDiodeGroupingSolver"
@@ -132,6 +133,7 @@ export class SchematicPlacementAnalysis {
       PotentiometerHasIncorrectRailOrientation: 0,
       CapacitorSeparatedFromResistorDivider: 0,
       SeriesResistorsNotAligned: 0,
+      FuseMosfetNotAligned: 0,
       FuseDiodeNotAligned: 0,
       InductorSeparatedFromChipPins: 0,
       TransistorHasIncorrectRailOrientation: 0,
@@ -243,6 +245,8 @@ export class SchematicPlacementAnalysis {
         return ResistorDividerCapacitorPlacementSolver.issueToString(issue)
       case "SeriesResistorsNotAligned":
         return SeriesResistorAlignmentSolver.issueToString(issue)
+      case "FuseMosfetNotAligned":
+        return FuseMosfetAlignmentSolver.issueToString(issue)
       case "FuseDiodeNotAligned":
         return FuseDiodeAlignmentSolver.issueToString(issue)
       case "InductorSeparatedFromChipPins":

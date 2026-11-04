@@ -51,13 +51,13 @@ const DPAK = (
     />
   </footprint>
 )
-export async function createRadioFuseMosfet() {
+export async function createRadioFuseMosfet(after = false) {
   const c = new Circuit()
   c.pcbDisabled = true
   c.add(
     <board
       schLayout={{ layoutMode: "none" }}
-      schMaxTraceDistance={100}
+      schMaxTraceDistance={after ? 4 : 100}
       schTraceAutoLabelEnabled
     >
       <net name="GND" isGroundNet />
@@ -71,7 +71,7 @@ export async function createRadioFuseMosfet() {
         voltageRating="32V"
         footprint={Fuse2410}
         schX={-13}
-        schY={5}
+        schY={after ? 5.26 : 5}
       />
       <mosfet
         name="Q1"
@@ -81,18 +81,18 @@ export async function createRadioFuseMosfet() {
         manufacturerPartNumber="IPD50P04P4L-11"
         schX={-10}
         schY={5}
-        symbolDrainSide={undefined}
-        symbolSourceSide={undefined}
-        symbolGateSide={undefined}
+        symbolDrainSide={after ? "left" : undefined}
+        symbolSourceSide={after ? "right" : undefined}
+        symbolGateSide={after ? "bottom" : undefined}
       />
       <resistor
         name="R1"
         supplierPartNumbers={{ jlcpcb: ["C17414", "C49196820", "C7468432"] }}
         resistance="10k"
         footprint="0805"
-        schX={-9}
-        schY={3}
-        schRotation={0}
+        schX={after ? -8 : -9}
+        schY={after ? 2 : 3}
+        schRotation={after ? -90 : 0}
       />
       <diode
         name="D2"
@@ -100,9 +100,9 @@ export async function createRadioFuseMosfet() {
         zener
         manufacturerPartNumber="MMSZ5242B"
         footprint="sod123"
-        schX={-11}
-        schY={3}
-        schRotation={0}
+        schX={after ? -8 : -11}
+        schY={after ? 3.7 : 3}
+        schRotation={after ? 90 : 0}
       />
       <diode
         name="D1"
@@ -110,9 +110,9 @@ export async function createRadioFuseMosfet() {
         tvs
         manufacturerPartNumber="SMCJ18A"
         footprint="smc"
-        schX={-8}
-        schY={3}
-        schRotation={0}
+        schX={after ? -6 : -8}
+        schY={after ? 3.7 : 3}
+        schRotation={after ? 90 : 0}
       />
       <trace from="F1.pin1" to="net.VIN_RAW" />
       <trace from="F1.pin2" to="net.VIN_FUSED" />
@@ -124,6 +124,24 @@ export async function createRadioFuseMosfet() {
       <trace from="D2.anode" to="Q1.gate" />
       <trace from="D1.cathode" to="net.VBAT_PROT" />
       <trace from="D1.anode" to="net.GND" />
+      {after && (
+        <>
+          <netlabel
+            net="GND"
+            connectsTo="R1.pin2"
+            schX={-8}
+            schY={1.3}
+            anchorSide="top"
+          />
+          <netlabel
+            net="GND"
+            connectsTo="D1.anode"
+            schX={-6}
+            schY={2.9}
+            anchorSide="top"
+          />
+        </>
+      )}
     </board>,
   )
   await c.renderUntilSettled()

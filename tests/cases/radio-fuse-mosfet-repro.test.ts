@@ -28,6 +28,7 @@ test("reproduces the published radio-fuse-mosfet positions and retained electric
   ])
   const analysis = analyzeSchematicPlacement(json)
   expect(analysis.getIssues().map((i) => i.lineItemType)).toEqual([
+    "FuseMosfetNotAligned",
     "DiodeResistorNotAligned",
     "TwoPinComponentShouldBeVertical",
     "TwoPinComponentShouldBeVertical",
