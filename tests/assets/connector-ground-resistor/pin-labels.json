@@ -1,0 +1,18 @@
+{
+  "pin13": ["EH1", "SHELL1"],
+  "pin14": ["EH2", "SHELL2"],
+  "pin15": ["pin13_alt1", "SHELL3"],
+  "pin16": ["pin14_alt1", "SHELL4"],
+  "pin17": ["A1B12", "GND1"],
+  "pin18": ["A4B9", "VBUS1"],
+  "pin19": ["B8", "SBU2"],
+  "pin20": ["A5", "CC1"],
+  "pin21": ["B7", "DM2"],
+  "pin22": ["A6", "DP1"],
+  "pin23": ["A7", "DM1"],
+  "pin24": ["B6", "DP2"],
+  "pin25": ["A8", "SBU1"],
+  "pin26": ["B5", "CC2"],
+  "pin27": ["B4A9", "VBUS2"],
+  "pin28": ["B1A12", "GND2"]
+}
