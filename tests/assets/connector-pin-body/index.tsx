@@ -11,7 +11,7 @@ const labels = {
   pin5: ["pin5"],
   pin6: ["pin6"],
 } as const
-export function Headers() {
+export function Headers({ after = false }: { after?: boolean }) {
   return (
     <board routingDisabled schMaxTraceDistance={1.2} schTraceAutoLabelEnabled>
       <net name="VCC" isPowerNet />
@@ -21,10 +21,10 @@ export function Headers() {
           name={name}
           manufacturerPartNumber="A_2_54_1_6P_"
           pinLabels={labels}
-          schX={8.2 + 3.2 * k}
-          schY={3.5}
+          schX={after ? 8.2 : 8.2 + 3.2 * k}
+          schY={after ? 3.5 - 2 * k : 3.5}
           schWidth={3.2}
-          schHeight={3.2}
+          schHeight={after ? 0.8 : 3.2}
           connections={{
             pin1: `net.${k ? "M2_CH5" : "M1_CH1"}`,
             pin2: `net.${k ? "M2_CH6" : "M1_CH2"}`,
@@ -39,10 +39,10 @@ export function Headers() {
   )
 }
 
-export async function createConnectorPinBody() {
+export async function createConnectorPinBody(after = false) {
   const circuit = new Circuit()
   circuit.pcbDisabled = true
-  circuit.add(<Headers />)
+  circuit.add(<Headers after={after} />)
   await circuit.renderUntilSettled()
   return circuit.getCircuitJson()
 }

@@ -44,7 +44,7 @@ test("reproduces the published connector-pin-body placement", async () => {
   }
   const analysis = analyzeSchematicPlacement(json)
   expect(analysis.getIssues({ issueTypes: ["ComponentOverlap"] })).toHaveLength(
-    0,
+    1,
   )
   for (const [name, circuitJson] of [
     ["extract", json],

@@ -200,12 +200,22 @@ export interface SchematicBoxPlacementLineItem extends SchematicBoxPlacement {
   lineItemType: "SchematicBoxPlacement"
 }
 
+export interface SchematicPinBodyOverlap {
+  schematicPortId: string
+  componentName?: string
+  pinNumber?: number
+  start: { x: number; y: number }
+  end: { x: number; y: number }
+}
+
 export interface ComponentOverlap {
   lineItemType: "ComponentOverlap"
   firstComponent: SchematicBoxPlacement
   secondComponent: SchematicBoxPlacement
   overlapWidth: number
   overlapHeight: number
+  /** External pin segments inside a neighboring rectangular symbol. */
+  pinBodyOverlaps?: SchematicPinBodyOverlap[]
   correctionSuggestions: OverlapCorrectionSuggestion[]
 }
 

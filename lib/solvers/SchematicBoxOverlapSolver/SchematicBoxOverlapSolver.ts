@@ -7,6 +7,7 @@ import type {
 } from "../../types"
 import type { SolverContext } from "../SolverContext"
 import { addAttr } from "../../utils/format"
+import { getExternalBoxPins, getPinBodyOverlaps } from "./box-pins"
 
 interface RectBounds {
   left: number
@@ -17,6 +18,7 @@ interface RectBounds {
 
 export class SchematicBoxOverlapSolver extends BaseSolver {
   private readonly placements: SchematicBoxPlacement[]
+  private readonly externalPins: ReturnType<typeof getExternalBoxPins>
   private firstIndex = 0
   private secondIndex = 1
 
@@ -28,6 +30,7 @@ export class SchematicBoxOverlapSolver extends BaseSolver {
   ) {
     super()
     this.placements = params.ctx.componentPlacements
+    this.externalPins = getExternalBoxPins(params.ctx)
     this.solved = this.placements.length < 2
   }
 
@@ -106,6 +109,23 @@ export class SchematicBoxOverlapSolver extends BaseSolver {
     addAttr(attrs, "component2SchY", issue.secondComponent.schY)
     addAttr(attrs, "overlapWidth", issue.overlapWidth)
     addAttr(attrs, "overlapHeight", issue.overlapHeight)
+    if (issue.pinBodyOverlaps?.length) {
+      addAttr(attrs, "reason", "pin_body_overlap")
+      addAttr(
+        attrs,
+        "pins",
+        issue.pinBodyOverlaps
+          .map(
+            (p) => `${p.componentName ?? "component"}.${p.pinNumber ?? "pin"}`,
+          )
+          .join(", "),
+      )
+      addAttr(
+        attrs,
+        "message",
+        "Separate the components so their external pins clear neighboring bodies. Preserve pin order and connections, leave room for labels, and reroute affected traces.",
+      )
+    }
     return [
       `<ComponentOverlap ${attrs.join(" ")}>`,
       ...issue.correctionSuggestions.map(
@@ -131,6 +151,80 @@ export class SchematicBoxOverlapSolver extends BaseSolver {
     return `<OverlapCorrectionSuggestion ${attrs.join(" ")} />`
   }
 
+  private getPinOverlap(
+    firstComponent: SchematicBoxPlacement,
+    secondComponent: SchematicBoxPlacement,
+  ): ComponentOverlap | null {
+    const firstPins = this.externalPins.get(
+        firstComponent.schematicComponentId ?? "",
+      ),
+      secondPins = this.externalPins.get(
+        secondComponent.schematicComponentId ?? "",
+      )
+    if (!firstPins || !secondPins) return null
+    const pinBodyOverlaps = [
+      ...getPinBodyOverlaps(firstPins, secondComponent),
+      ...getPinBodyOverlaps(secondPins, firstComponent),
+    ]
+    if (!pinBodyOverlaps.length) return null
+    const points = pinBodyOverlaps.flatMap((p) => [p.start, p.end])
+    // Clearing the two occupied envelopes also clears reciprocal pin/body hits.
+    const bounds = (b: SchematicBoxPlacement, pins: typeof firstPins) => ({
+      left: Math.min(b.schX - b.width / 2, ...pins.map((p) => p.end.x)),
+      right: Math.max(b.schX + b.width / 2, ...pins.map((p) => p.end.x)),
+      bottom: Math.min(b.schY - b.height / 2, ...pins.map((p) => p.end.y)),
+      top: Math.max(b.schY + b.height / 2, ...pins.map((p) => p.end.y)),
+    })
+    const target =
+      firstComponent.width * firstComponent.height <=
+      secondComponent.width * secondComponent.height
+        ? firstComponent
+        : secondComponent
+    const other = target === firstComponent ? secondComponent : firstComponent
+    const a = bounds(
+        target,
+        target === firstComponent ? firstPins : secondPins,
+      ),
+      b = bounds(other, target === firstComponent ? secondPins : firstPins)
+    const clearance = 0.1
+    const dx =
+      target.schX <= other.schX
+        ? b.left - a.right - clearance
+        : b.right - a.left + clearance
+    const dy =
+      target.schY <= other.schY
+        ? b.bottom - a.top - clearance
+        : b.top - a.bottom + clearance
+    return {
+      lineItemType: "ComponentOverlap",
+      firstComponent,
+      secondComponent,
+      pinBodyOverlaps,
+      overlapWidth:
+        Math.max(...points.map((p) => p.x)) -
+        Math.min(...points.map((p) => p.x)),
+      overlapHeight:
+        Math.max(...points.map((p) => p.y)) -
+        Math.min(...points.map((p) => p.y)),
+      correctionSuggestions: [
+        {
+          targetComponentName: target.sourceComponentName,
+          deltaSchX: dx,
+          deltaSchY: 0,
+          newSchX: target.schX + dx,
+          newSchY: target.schY,
+        },
+        {
+          targetComponentName: target.sourceComponentName,
+          deltaSchX: 0,
+          deltaSchY: dy,
+          newSchX: target.schX,
+          newSchY: target.schY + dy,
+        },
+      ],
+    }
+  }
+
   private getComponentOverlap(
     firstComponent: SchematicBoxPlacement,
     secondComponent: SchematicBoxPlacement,
@@ -143,7 +237,8 @@ export class SchematicBoxOverlapSolver extends BaseSolver {
     const overlapWidth = Math.min(a.right, b.right) - Math.max(a.left, b.left)
     const overlapHeight = Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top)
 
-    if (overlapWidth <= 0 || overlapHeight <= 0) return null
+    if (overlapWidth <= 1e-9 || overlapHeight <= 1e-9)
+      return this.getPinOverlap(firstComponent, secondComponent)
 
     return {
       lineItemType: "ComponentOverlap",

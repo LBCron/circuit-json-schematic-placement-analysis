@@ -9,61 +9,13 @@ test("generates a schematic box overlap issue", async () => {
   const analysis = analyzeSchematicPlacement(
     overlappingSchematicBoxesCircuitJson,
   )
-  // const issuesLineItem = analysis
-  //   .getLineItems()
-  //   .find((lineItem) => lineItem.lineItemType === "SchematicPlacementIssues")
-
-  // expect(issuesLineItem).toMatchObject({
-  //   lineItemType: "SchematicPlacementIssues",
-  //   issues: [
-  //     {
-  //       lineItemType: "ComponentOverlap",
-  //       firstComponent: {
-  //         positionAnchor: "center",
-  //         schX: 0,
-  //         schY: 0,
-  //         sourceComponentName: "U1",
-  //       },
-  //       secondComponent: {
-  //         positionAnchor: "center",
-  //         schX: 1,
-  //         schY: 0.5,
-  //         sourceComponentName: "R2",
-  //       },
-  //       correctionSuggestions: [
-  //         {
-  //           targetComponentName: "R2",
-  //           deltaSchX: 0,
-  //           deltaSchY: 0.19445534999999947,
-  //           newSchX: 1,
-  //           newSchY: 0.6944553499999995,
-  //         },
-  //         {
-  //           targetComponentName: "R2",
-  //           deltaSchX: 0.2500000000000001,
-  //           deltaSchY: 0,
-  //           newSchX: 1.25,
-  //           newSchY: 0.5,
-  //         },
-  //       ],
-  //     },
-  //   ],
-  // })
-
-  // expect(analysis.toString()).toContain(
-  //   '<OverlapCorrectionSuggestion target="R2" newSchX="1.25" deltaSchX="+0.25" />',
-  // )
-  // expect(analysis.toString()).toContain(
-  //   '<OverlapCorrectionSuggestion target="R2" newSchY="0.694" deltaSchY="+0.194" />',
-  // )
-  // expect(analysis.toString()).not.toContain('deltaSchX="0"')
-  // expect(analysis.toString()).not.toContain('deltaSchY="0"')
-  // expect(analysis.toString()).not.toContain(
-  //   '<OverlapCorrectionSuggestion target="U1"',
-  // )
-  // expect(analysis.toString()).not.toContain("overlapCenterSch")
-  // expect(analysis.toString()).not.toContain("source_component_")
-  // expect(analysis.toString()).not.toContain("schematic_component_")
+  const overlaps = analysis
+    .getIssues()
+    .filter((issue) => issue.lineItemType === "ComponentOverlap")
+  expect(overlaps).toHaveLength(1)
+  expect(overlaps[0]!.overlapWidth).toBeCloseTo(0.1)
+  expect(overlaps[0]!.overlapHeight).toBeGreaterThan(0)
+  expect(overlaps[0]!.pinBodyOverlaps).toBeUndefined()
 
   expect(analysis.toString()).not.toContain("<SchematicSheet")
 
@@ -71,6 +23,6 @@ test("generates a schematic box overlap issue", async () => {
     createSchematicAnalysisFixtureSvg({
       circuitJson: overlappingSchematicBoxesCircuitJson,
       analysis,
-    }),
+    }).replace(/[ \t]+$/gm, ""),
   ).toMatchSvgSnapshot(import.meta.path)
 })

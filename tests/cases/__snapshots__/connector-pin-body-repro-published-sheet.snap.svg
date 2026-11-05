@@ -1,4 +1,4 @@
-<svg width="1400" height="1830" viewBox="0 0 1400 1830" xmlns="http://www.w3.org/2000/svg">
+<svg width="1400" height="2028" viewBox="0 0 1400 2028" xmlns="http://www.w3.org/2000/svg">
   <g transform="translate(0, 0)">
     <svg xmlns="http://www.w3.org/2000/svg" class="tscircuit-schematic" width="1400" height="650" style="background-color: rgb(245, 241, 237)" data-real-to-screen-transform="matrix(27.3843091723,0,0,-27.3843091723,642.7667938298,331.8460772931)"><style>
               .boundary { fill: rgb(245, 241, 237); }
@@ -350,6 +350,7 @@
 
 
 
+
 <line x1="453.81506054093" y1="171.64786863514502" x2="427.81506054093" y2="133.64786863514502" stroke="#b91c1c" stroke-width="0.5" />
 <line x1="823.50323436698" y1="192.18610051437" x2="797.50323436698" y2="154.18610051437" stroke="#b91c1c" stroke-width="0.5" />
 <line x1="655.9078515167967" y1="280.53211825683877" x2="629.9078515167967" y2="242.53211825683877" stroke="#b91c1c" stroke-width="0.5" />
@@ -357,92 +358,99 @@
 <line x1="831.71852711867" y1="260.099187261674" x2="805.71852711867" y2="222.099187261674" stroke="#b91c1c" stroke-width="0.5" />
 <line x1="874.438049427458" y1="233.26256427282" x2="848.438049427458" y2="195.26256427282" stroke="#b91c1c" stroke-width="0.5" />
 <line x1="874.438049427458" y1="227.78570243835998" x2="848.438049427458" y2="241.78570243835998" stroke="#b91c1c" stroke-width="0.5" />
-<line x1="922.08674738726" y1="233.26256427282" x2="896.08674738726" y2="247.26256427282" stroke="#b91c1c" stroke-width="0.5" />
-<line x1="922.08674738726" y1="227.78570243835998" x2="948.08674738726" y2="189.78570243835998" stroke="#b91c1c" stroke-width="0.5" /><g data-issue-number="1" data-issue-type="ParallelDiodeResistorNotAligned" transform="translate(655.9078515167967 268.53211825683877) scale(1)"><title>#1 ParallelDiodeResistorNotAligned
+<line x1="922.08674738726" y1="238.73942610728" x2="896.08674738726" y2="252.73942610728" stroke="#b91c1c" stroke-width="0.5" />
+<line x1="922.08674738726" y1="233.26256427282" x2="948.08674738726" y2="195.26256427282" stroke="#b91c1c" stroke-width="0.5" />
+<line x1="922.08674738726" y1="227.78570243835998" x2="948.08674738726" y2="241.78570243835998" stroke="#b91c1c" stroke-width="0.5" /><g data-issue-number="1" data-issue-type="ParallelDiodeResistorNotAligned" transform="translate(655.9078515167967 268.53211825683877) scale(1)"><title>#1 ParallelDiodeResistorNotAligned
 &lt;ParallelDiodeResistorNotAligned diodeComponentName=&quot;D5&quot; resistorComponentName=&quot;R14&quot; reason=&quot;crossed_connections&quot; message=&quot;Draw D5 and R14 as adjacent parallel rows or columns with their shared nets at matching ends. Preserve every pin connection and diode polarity, leave room for labels, and reroute the affected wires.&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">1</text></g>
 <g data-issue-number="1" data-issue-type="ParallelDiodeResistorNotAligned" transform="translate(716.70442859501 267.1312821364225) scale(1)"><title>#1 ParallelDiodeResistorNotAligned
 &lt;ParallelDiodeResistorNotAligned diodeComponentName=&quot;D5&quot; resistorComponentName=&quot;R14&quot; reason=&quot;crossed_connections&quot; message=&quot;Draw D5 and R14 as adjacent parallel rows or columns with their shared nets at matching ends. Preserve every pin connection and diode polarity, leave room for labels, and reroute the affected wires.&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">1</text></g>
-<g data-issue-number="2" data-issue-type="GenericSchematicBoxTooWide" transform="translate(453.81506054093 159.64786863514502) scale(1)"><title>#2 GenericSchematicBoxTooWide
-&lt;GenericSchematicBoxTooWide message=&quot;Shrink schematic box width&quot; componentName=&quot;U2&quot; currentSchWidth=&quot;5.2&quot; measuredInnerLabelHorizontalEmptySpace=&quot;4.525&quot; maxAllowedInnerLabelHorizontalEmptySpace=&quot;1&quot; suggestedSchWidth=&quot;1.675&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">2</text></g>
-<g data-issue-number="3" data-issue-type="GenericSchematicBoxTooWide" transform="translate(456.55349145816 408.845082103075) scale(1)"><title>#3 GenericSchematicBoxTooWide
-&lt;GenericSchematicBoxTooWide message=&quot;Shrink schematic box width&quot; componentName=&quot;U3&quot; currentSchWidth=&quot;5.2&quot; measuredInnerLabelHorizontalEmptySpace=&quot;4.43&quot; maxAllowedInnerLabelHorizontalEmptySpace=&quot;1&quot; suggestedSchWidth=&quot;1.77&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">3</text></g>
-<g data-issue-number="4" data-issue-type="SchematicPinPaddingToEdgeTooLarge" transform="translate(427.81506054093 133.64786863514502) scale(1)"><title>#4 SchematicPinPaddingToEdgeTooLarge
-&lt;SchematicPinPaddingToEdgeTooLarge message=&quot;Move schematic pins closer to the box edge or change the schematic box height&quot; componentName=&quot;U2&quot; pinSides=&quot;left,right&quot; edgeSides=&quot;top,bottom&quot; suggestedSchHeight=&quot;1.8&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">4</text></g>
-<g data-issue-number="5" data-issue-type="SchematicPinPaddingToEdgeTooLarge" transform="translate(823.50323436698 180.18610051437) scale(1)"><title>#5 SchematicPinPaddingToEdgeTooLarge
-&lt;SchematicPinPaddingToEdgeTooLarge message=&quot;Move schematic pins closer to the box edge or change the schematic box height&quot; componentName=&quot;J7&quot; pinSides=&quot;left,right&quot; edgeSides=&quot;top,bottom&quot; suggestedSchHeight=&quot;0.8&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">5</text></g>
-<g data-issue-number="6" data-issue-type="SchematicPinPaddingToEdgeTooLarge" transform="translate(911.13302371834 180.18610051437) scale(1)"><title>#6 SchematicPinPaddingToEdgeTooLarge
-&lt;SchematicPinPaddingToEdgeTooLarge message=&quot;Move schematic pins closer to the box edge or change the schematic box height&quot; componentName=&quot;J8&quot; pinSides=&quot;left,right&quot; edgeSides=&quot;top,bottom&quot; suggestedSchHeight=&quot;0.8&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">6</text></g>
-<g data-issue-number="7" data-issue-type="TwoPinComponentCouldBeFlipped" transform="translate(765.448498921704 268.637419140899) scale(1)"><title>#7 TwoPinComponentCouldBeFlipped
-&lt;TwoPinComponentCouldBeFlipped traceName=&quot;D6.pin1 to J7.pin1&quot; targetComponentName=&quot;D6&quot; connectedComponentName=&quot;J7&quot; targetPin=&quot;pin1&quot; currentFacingDirection=&quot;left&quot; suggestedFacingDirection=&quot;right&quot; deltaSchRotation=&quot;180&quot; currentTurnCount=&quot;2&quot; suggestedTurnCount=&quot;1&quot; message=&quot;rotate D6 by 180° so pin1 faces J7 and reduce this trace from 2 turns to 1&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">7</text></g>
-<g data-issue-number="7" data-issue-type="TwoPinComponentCouldBeFlipped" transform="translate(797.50323436698 154.18610051437) scale(1)"><title>#7 TwoPinComponentCouldBeFlipped
-&lt;TwoPinComponentCouldBeFlipped traceName=&quot;D6.pin1 to J7.pin1&quot; targetComponentName=&quot;D6&quot; connectedComponentName=&quot;J7&quot; targetPin=&quot;pin1&quot; currentFacingDirection=&quot;left&quot; suggestedFacingDirection=&quot;right&quot; deltaSchRotation=&quot;180&quot; currentTurnCount=&quot;2&quot; suggestedTurnCount=&quot;1&quot; message=&quot;rotate D6 by 180° so pin1 faces J7 and reduce this trace from 2 turns to 1&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">7</text></g>
-<g data-issue-number="8" data-issue-type="TwoPinComponentShouldBeVertical" transform="translate(629.9078515167967 242.53211825683877) scale(1)"><title>#8 TwoPinComponentShouldBeVertical
-&lt;TwoPinComponentShouldBeVertical componentName=&quot;D5&quot; railPin=&quot;pin2&quot; railType=&quot;power&quot; deltaSchRotation=&quot;90&quot; suggestedRailFacingDirection=&quot;up&quot; message=&quot;rotate D5 by 90° so its power-connected pin faces up and the component is vertical&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">8</text></g>
-<g data-issue-number="9" data-issue-type="TwoPinComponentShouldBeVertical" transform="translate(690.70442859501 241.1312821364225) scale(1)"><title>#9 TwoPinComponentShouldBeVertical
-&lt;TwoPinComponentShouldBeVertical componentName=&quot;R14&quot; railPin=&quot;pin1&quot; railType=&quot;power&quot; deltaSchRotation=&quot;-90&quot; suggestedRailFacingDirection=&quot;up&quot; message=&quot;rotate R14 by -90° so its power-connected pin faces up and the component is vertical&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">9</text></g>
-<g data-issue-number="10" data-issue-type="TwoPinComponentHasInvertedRails" transform="translate(822.134018908365 267.81588986573) scale(1)"><title>#10 TwoPinComponentHasInvertedRails
-&lt;TwoPinComponentHasInvertedRails componentName=&quot;C3&quot; railPin=&quot;pin2&quot; railType=&quot;ground&quot; deltaSchRotation=&quot;180&quot; suggestedRailFacingDirection=&quot;down&quot; message=&quot;rotate C3 by 180° so its ground pin faces down and its signal pin faces up; preserve pin connections and reroute attached traces&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">10</text></g>
-<g data-issue-number="11" data-issue-type="NetLabelCollision" transform="translate(805.71852711867 222.099187261674) scale(1)"><title>#11 NetLabelCollision
+<g data-issue-number="2" data-issue-type="ComponentOverlap" transform="translate(911.13302371834 229.47785702451) scale(1)"><title>#2 ComponentOverlap
+&lt;ComponentOverlap component1Name=&quot;J7&quot; component2Name=&quot;J8&quot; component1SchX=&quot;8.2&quot; component1SchY=&quot;3.5&quot; component2SchX=&quot;11.4&quot; component2SchY=&quot;3.5&quot; overlapWidth=&quot;0.8&quot; overlapHeight=&quot;0.4&quot; reason=&quot;pin_body_overlap&quot; pins=&quot;J7.4, J7.5, J7.6, J8.1, J8.2, J8.3&quot; message=&quot;Separate the components so their external pins clear neighboring bodies. Preserve pin order and connections, leave room for labels, and reroute affected traces.&quot;&gt;
+&lt;OverlapCorrectionSuggestion target=&quot;J7&quot; newSchX=&quot;7.3&quot; deltaSchX=&quot;-0.9&quot; /&gt;
+&lt;OverlapCorrectionSuggestion target=&quot;J7&quot; newSchY=&quot;0.2&quot; deltaSchY=&quot;-3.3&quot; /&gt;
+&lt;/ComponentOverlap&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">2</text></g>
+<g data-issue-number="3" data-issue-type="GenericSchematicBoxTooWide" transform="translate(453.81506054093 159.64786863514502) scale(1)"><title>#3 GenericSchematicBoxTooWide
+&lt;GenericSchematicBoxTooWide message=&quot;Shrink schematic box width&quot; componentName=&quot;U2&quot; currentSchWidth=&quot;5.2&quot; measuredInnerLabelHorizontalEmptySpace=&quot;4.525&quot; maxAllowedInnerLabelHorizontalEmptySpace=&quot;1&quot; suggestedSchWidth=&quot;1.675&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">3</text></g>
+<g data-issue-number="4" data-issue-type="GenericSchematicBoxTooWide" transform="translate(456.55349145816 408.845082103075) scale(1)"><title>#4 GenericSchematicBoxTooWide
+&lt;GenericSchematicBoxTooWide message=&quot;Shrink schematic box width&quot; componentName=&quot;U3&quot; currentSchWidth=&quot;5.2&quot; measuredInnerLabelHorizontalEmptySpace=&quot;4.43&quot; maxAllowedInnerLabelHorizontalEmptySpace=&quot;1&quot; suggestedSchWidth=&quot;1.77&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">4</text></g>
+<g data-issue-number="5" data-issue-type="SchematicPinPaddingToEdgeTooLarge" transform="translate(427.81506054093 133.64786863514502) scale(1)"><title>#5 SchematicPinPaddingToEdgeTooLarge
+&lt;SchematicPinPaddingToEdgeTooLarge message=&quot;Move schematic pins closer to the box edge or change the schematic box height&quot; componentName=&quot;U2&quot; pinSides=&quot;left,right&quot; edgeSides=&quot;top,bottom&quot; suggestedSchHeight=&quot;1.8&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">5</text></g>
+<g data-issue-number="6" data-issue-type="SchematicPinPaddingToEdgeTooLarge" transform="translate(823.50323436698 180.18610051437) scale(1)"><title>#6 SchematicPinPaddingToEdgeTooLarge
+&lt;SchematicPinPaddingToEdgeTooLarge message=&quot;Move schematic pins closer to the box edge or change the schematic box height&quot; componentName=&quot;J7&quot; pinSides=&quot;left,right&quot; edgeSides=&quot;top,bottom&quot; suggestedSchHeight=&quot;0.8&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">6</text></g>
+<g data-issue-number="7" data-issue-type="SchematicPinPaddingToEdgeTooLarge" transform="translate(911.13302371834 180.18610051437) scale(1)"><title>#7 SchematicPinPaddingToEdgeTooLarge
+&lt;SchematicPinPaddingToEdgeTooLarge message=&quot;Move schematic pins closer to the box edge or change the schematic box height&quot; componentName=&quot;J8&quot; pinSides=&quot;left,right&quot; edgeSides=&quot;top,bottom&quot; suggestedSchHeight=&quot;0.8&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">7</text></g>
+<g data-issue-number="8" data-issue-type="TwoPinComponentCouldBeFlipped" transform="translate(765.448498921704 268.637419140899) scale(1)"><title>#8 TwoPinComponentCouldBeFlipped
+&lt;TwoPinComponentCouldBeFlipped traceName=&quot;D6.pin1 to J7.pin1&quot; targetComponentName=&quot;D6&quot; connectedComponentName=&quot;J7&quot; targetPin=&quot;pin1&quot; currentFacingDirection=&quot;left&quot; suggestedFacingDirection=&quot;right&quot; deltaSchRotation=&quot;180&quot; currentTurnCount=&quot;2&quot; suggestedTurnCount=&quot;1&quot; message=&quot;rotate D6 by 180° so pin1 faces J7 and reduce this trace from 2 turns to 1&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">8</text></g>
+<g data-issue-number="8" data-issue-type="TwoPinComponentCouldBeFlipped" transform="translate(797.50323436698 154.18610051437) scale(1)"><title>#8 TwoPinComponentCouldBeFlipped
+&lt;TwoPinComponentCouldBeFlipped traceName=&quot;D6.pin1 to J7.pin1&quot; targetComponentName=&quot;D6&quot; connectedComponentName=&quot;J7&quot; targetPin=&quot;pin1&quot; currentFacingDirection=&quot;left&quot; suggestedFacingDirection=&quot;right&quot; deltaSchRotation=&quot;180&quot; currentTurnCount=&quot;2&quot; suggestedTurnCount=&quot;1&quot; message=&quot;rotate D6 by 180° so pin1 faces J7 and reduce this trace from 2 turns to 1&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">8</text></g>
+<g data-issue-number="9" data-issue-type="TwoPinComponentShouldBeVertical" transform="translate(629.9078515167967 242.53211825683877) scale(1)"><title>#9 TwoPinComponentShouldBeVertical
+&lt;TwoPinComponentShouldBeVertical componentName=&quot;D5&quot; railPin=&quot;pin2&quot; railType=&quot;power&quot; deltaSchRotation=&quot;90&quot; suggestedRailFacingDirection=&quot;up&quot; message=&quot;rotate D5 by 90° so its power-connected pin faces up and the component is vertical&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">9</text></g>
+<g data-issue-number="10" data-issue-type="TwoPinComponentShouldBeVertical" transform="translate(690.70442859501 241.1312821364225) scale(1)"><title>#10 TwoPinComponentShouldBeVertical
+&lt;TwoPinComponentShouldBeVertical componentName=&quot;R14&quot; railPin=&quot;pin1&quot; railType=&quot;power&quot; deltaSchRotation=&quot;-90&quot; suggestedRailFacingDirection=&quot;up&quot; message=&quot;rotate R14 by -90° so its power-connected pin faces up and the component is vertical&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">10</text></g>
+<g data-issue-number="11" data-issue-type="TwoPinComponentHasInvertedRails" transform="translate(822.134018908365 267.81588986573) scale(1)"><title>#11 TwoPinComponentHasInvertedRails
+&lt;TwoPinComponentHasInvertedRails componentName=&quot;C3&quot; railPin=&quot;pin2&quot; railType=&quot;ground&quot; deltaSchRotation=&quot;180&quot; suggestedRailFacingDirection=&quot;down&quot; message=&quot;rotate C3 by 180° so its ground pin faces down and its signal pin faces up; preserve pin connections and reroute attached traces&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">11</text></g>
+<g data-issue-number="12" data-issue-type="NetLabelCollision" transform="translate(805.71852711867 222.099187261674) scale(1)"><title>#12 NetLabelCollision
 &lt;ComponentNetLabelCollision pair1=&quot;J7/C3&quot; pair2=&quot;J7/J8&quot; pair3=&quot;J8/J7&quot;&gt;
   &lt;SuggestedFix note=&quot;Apply all moves simultaneously. Set schAutoLayoutEnabled on your circuit.&quot;&gt;
     &lt;Move componentName=&quot;C3&quot; newSchX=&quot;6.12&quot; newSchY=&quot;1.6&quot; /&gt;
     &lt;Move componentName=&quot;J7&quot; newSchX=&quot;7.92&quot; newSchY=&quot;3.5&quot; /&gt;
     &lt;Move componentName=&quot;J8&quot; newSchX=&quot;12.56&quot; newSchY=&quot;3.5&quot; /&gt;
   &lt;/SuggestedFix&gt;
-&lt;/ComponentNetLabelCollision&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">11</text></g>
-<g data-issue-number="11" data-issue-type="NetLabelCollision" transform="translate(874.438049427458 226.73942610728) scale(1)"><title>#11 NetLabelCollision
+&lt;/ComponentNetLabelCollision&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">12</text></g>
+<g data-issue-number="12" data-issue-type="NetLabelCollision" transform="translate(874.438049427458 226.73942610728) scale(1)"><title>#12 NetLabelCollision
 &lt;ComponentNetLabelCollision pair1=&quot;J7/C3&quot; pair2=&quot;J7/J8&quot; pair3=&quot;J8/J7&quot;&gt;
   &lt;SuggestedFix note=&quot;Apply all moves simultaneously. Set schAutoLayoutEnabled on your circuit.&quot;&gt;
     &lt;Move componentName=&quot;C3&quot; newSchX=&quot;6.12&quot; newSchY=&quot;1.6&quot; /&gt;
     &lt;Move componentName=&quot;J7&quot; newSchX=&quot;7.92&quot; newSchY=&quot;3.5&quot; /&gt;
     &lt;Move componentName=&quot;J8&quot; newSchX=&quot;12.56&quot; newSchY=&quot;3.5&quot; /&gt;
   &lt;/SuggestedFix&gt;
-&lt;/ComponentNetLabelCollision&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">11</text></g>
-<g data-issue-number="11" data-issue-type="NetLabelCollision" transform="translate(848.438049427458 195.26256427282) scale(1)"><title>#11 NetLabelCollision
+&lt;/ComponentNetLabelCollision&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">12</text></g>
+<g data-issue-number="12" data-issue-type="NetLabelCollision" transform="translate(848.438049427458 195.26256427282) scale(1)"><title>#12 NetLabelCollision
 &lt;ComponentNetLabelCollision pair1=&quot;J7/C3&quot; pair2=&quot;J7/J8&quot; pair3=&quot;J8/J7&quot;&gt;
   &lt;SuggestedFix note=&quot;Apply all moves simultaneously. Set schAutoLayoutEnabled on your circuit.&quot;&gt;
     &lt;Move componentName=&quot;C3&quot; newSchX=&quot;6.12&quot; newSchY=&quot;1.6&quot; /&gt;
     &lt;Move componentName=&quot;J7&quot; newSchX=&quot;7.92&quot; newSchY=&quot;3.5&quot; /&gt;
     &lt;Move componentName=&quot;J8&quot; newSchX=&quot;12.56&quot; newSchY=&quot;3.5&quot; /&gt;
   &lt;/SuggestedFix&gt;
-&lt;/ComponentNetLabelCollision&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">11</text></g>
-<g data-issue-number="11" data-issue-type="NetLabelCollision" transform="translate(848.438049427458 241.78570243835998) scale(1)"><title>#11 NetLabelCollision
+&lt;/ComponentNetLabelCollision&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">12</text></g>
+<g data-issue-number="12" data-issue-type="NetLabelCollision" transform="translate(848.438049427458 241.78570243835998) scale(1)"><title>#12 NetLabelCollision
 &lt;ComponentNetLabelCollision pair1=&quot;J7/C3&quot; pair2=&quot;J7/J8&quot; pair3=&quot;J8/J7&quot;&gt;
   &lt;SuggestedFix note=&quot;Apply all moves simultaneously. Set schAutoLayoutEnabled on your circuit.&quot;&gt;
     &lt;Move componentName=&quot;C3&quot; newSchX=&quot;6.12&quot; newSchY=&quot;1.6&quot; /&gt;
     &lt;Move componentName=&quot;J7&quot; newSchX=&quot;7.92&quot; newSchY=&quot;3.5&quot; /&gt;
     &lt;Move componentName=&quot;J8&quot; newSchX=&quot;12.56&quot; newSchY=&quot;3.5&quot; /&gt;
   &lt;/SuggestedFix&gt;
-&lt;/ComponentNetLabelCollision&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">11</text></g>
-<g data-issue-number="11" data-issue-type="NetLabelCollision" transform="translate(922.08674738726 226.73942610728) scale(1)"><title>#11 NetLabelCollision
+&lt;/ComponentNetLabelCollision&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">12</text></g>
+<g data-issue-number="12" data-issue-type="NetLabelCollision" transform="translate(896.08674738726 252.73942610728) scale(1)"><title>#12 NetLabelCollision
 &lt;ComponentNetLabelCollision pair1=&quot;J7/C3&quot; pair2=&quot;J7/J8&quot; pair3=&quot;J8/J7&quot;&gt;
   &lt;SuggestedFix note=&quot;Apply all moves simultaneously. Set schAutoLayoutEnabled on your circuit.&quot;&gt;
     &lt;Move componentName=&quot;C3&quot; newSchX=&quot;6.12&quot; newSchY=&quot;1.6&quot; /&gt;
     &lt;Move componentName=&quot;J7&quot; newSchX=&quot;7.92&quot; newSchY=&quot;3.5&quot; /&gt;
     &lt;Move componentName=&quot;J8&quot; newSchX=&quot;12.56&quot; newSchY=&quot;3.5&quot; /&gt;
   &lt;/SuggestedFix&gt;
-&lt;/ComponentNetLabelCollision&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">11</text></g>
-<g data-issue-number="11" data-issue-type="NetLabelCollision" transform="translate(896.08674738726 247.26256427282) scale(1)"><title>#11 NetLabelCollision
+&lt;/ComponentNetLabelCollision&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">12</text></g>
+<g data-issue-number="12" data-issue-type="NetLabelCollision" transform="translate(948.08674738726 195.26256427282) scale(1)"><title>#12 NetLabelCollision
 &lt;ComponentNetLabelCollision pair1=&quot;J7/C3&quot; pair2=&quot;J7/J8&quot; pair3=&quot;J8/J7&quot;&gt;
   &lt;SuggestedFix note=&quot;Apply all moves simultaneously. Set schAutoLayoutEnabled on your circuit.&quot;&gt;
     &lt;Move componentName=&quot;C3&quot; newSchX=&quot;6.12&quot; newSchY=&quot;1.6&quot; /&gt;
     &lt;Move componentName=&quot;J7&quot; newSchX=&quot;7.92&quot; newSchY=&quot;3.5&quot; /&gt;
     &lt;Move componentName=&quot;J8&quot; newSchX=&quot;12.56&quot; newSchY=&quot;3.5&quot; /&gt;
   &lt;/SuggestedFix&gt;
-&lt;/ComponentNetLabelCollision&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">11</text></g>
-<g data-issue-number="11" data-issue-type="NetLabelCollision" transform="translate(948.08674738726 189.78570243835998) scale(1)"><title>#11 NetLabelCollision
+&lt;/ComponentNetLabelCollision&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">12</text></g>
+<g data-issue-number="12" data-issue-type="NetLabelCollision" transform="translate(948.08674738726 241.78570243835998) scale(1)"><title>#12 NetLabelCollision
 &lt;ComponentNetLabelCollision pair1=&quot;J7/C3&quot; pair2=&quot;J7/J8&quot; pair3=&quot;J8/J7&quot;&gt;
   &lt;SuggestedFix note=&quot;Apply all moves simultaneously. Set schAutoLayoutEnabled on your circuit.&quot;&gt;
     &lt;Move componentName=&quot;C3&quot; newSchX=&quot;6.12&quot; newSchY=&quot;1.6&quot; /&gt;
     &lt;Move componentName=&quot;J7&quot; newSchX=&quot;7.92&quot; newSchY=&quot;3.5&quot; /&gt;
     &lt;Move componentName=&quot;J8&quot; newSchX=&quot;12.56&quot; newSchY=&quot;3.5&quot; /&gt;
   &lt;/SuggestedFix&gt;
-&lt;/ComponentNetLabelCollision&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">11</text></g></g></svg>
+&lt;/ComponentNetLabelCollision&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">12</text></g></g></svg>
   </g>
   <g transform="translate(0, 650) scale(1, 1) translate(0, 0)">
     <rect width="100%" height="100%" fill="#fff" />
 <text x="52" y="40" fill="#d00" font-family="Menlo, Consolas, monospace" font-size="16">
 <tspan x="52" dy="0">Emitted issue counts (all sheets):</tspan>
+<tspan x="52" dy="22">ComponentOverlap: 1</tspan>
 <tspan x="52" dy="22">GenericSchematicBoxTooWide: 2</tspan>
 <tspan x="52" dy="22">SchematicPinPaddingToEdgeTooLarge: 3</tspan>
 <tspan x="52" dy="22">ParallelDiodeResistorNotAligned: 1</tspan>
@@ -451,11 +459,19 @@
 <tspan x="52" dy="22">TwoPinComponentShouldBeVertical: 2</tspan>
 <tspan x="52" dy="22">TwoPinComponentHasInvertedRails: 1</tspan>
 <tspan x="52" dy="22">Selected type(s): all</tspan>
-<tspan x="52" dy="22">Matching issues: 11</tspan>
+<tspan x="52" dy="22">Matching issues: 12</tspan>
 <tspan x="52" dy="22">&lt;ParallelDiodeResistorNotAligned diodeComponentName=&quot;D5&quot; resistorComponentName=&quot;R14&quot;</tspan>
 <tspan x="52" dy="22">  reason=&quot;crossed_connections&quot; message=&quot;Draw D5 and R14 as adjacent parallel rows or columns</tspan>
 <tspan x="52" dy="22">  with their shared nets at matching ends. Preserve every pin connection and diode polarity,</tspan>
 <tspan x="52" dy="22">  leave room for labels, and reroute the affected wires.&quot; /&gt;</tspan>
+<tspan x="52" dy="22">&lt;ComponentOverlap component1Name=&quot;J7&quot; component2Name=&quot;J8&quot; component1SchX=&quot;8.2&quot;</tspan>
+<tspan x="52" dy="22">  component1SchY=&quot;3.5&quot; component2SchX=&quot;11.4&quot; component2SchY=&quot;3.5&quot; overlapWidth=&quot;0.8&quot;</tspan>
+<tspan x="52" dy="22">  overlapHeight=&quot;0.4&quot; reason=&quot;pin_body_overlap&quot; pins=&quot;J7.4, J7.5, J7.6, J8.1, J8.2, J8.3&quot;</tspan>
+<tspan x="52" dy="22">  message=&quot;Separate the components so their external pins clear neighboring bodies. Preserve pin</tspan>
+<tspan x="52" dy="22">  order and connections, leave room for labels, and reroute affected traces.&quot;&gt;</tspan>
+<tspan x="52" dy="22">&lt;OverlapCorrectionSuggestion target=&quot;J7&quot; newSchX=&quot;7.3&quot; deltaSchX=&quot;-0.9&quot; /&gt;</tspan>
+<tspan x="52" dy="22">&lt;OverlapCorrectionSuggestion target=&quot;J7&quot; newSchY=&quot;0.2&quot; deltaSchY=&quot;-3.3&quot; /&gt;</tspan>
+<tspan x="52" dy="22">&lt;/ComponentOverlap&gt;</tspan>
 <tspan x="52" dy="22">&lt;GenericSchematicBoxTooWide message=&quot;Shrink schematic box width&quot; componentName=&quot;U2&quot;</tspan>
 <tspan x="52" dy="22">  currentSchWidth=&quot;5.2&quot; measuredInnerLabelHorizontalEmptySpace=&quot;4.525&quot;</tspan>
 <tspan x="52" dy="22">  maxAllowedInnerLabelHorizontalEmptySpace=&quot;1&quot; suggestedSchWidth=&quot;1.675&quot; /&gt;</tspan>
@@ -495,16 +511,17 @@
 <tspan x="52" dy="22">  &lt;/SuggestedFix&gt;</tspan>
 <tspan x="52" dy="22">&lt;/ComponentNetLabelCollision&gt;</tspan>
 </text>
-<g data-listing-issue-number="1"><circle cx="24" cy="255" r="11" fill="#b91c1c" /><text x="24" y="255" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">1</text></g>
-<g data-listing-issue-number="2"><circle cx="24" cy="343" r="11" fill="#b91c1c" /><text x="24" y="343" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">2</text></g>
-<g data-listing-issue-number="3"><circle cx="24" cy="409" r="11" fill="#b91c1c" /><text x="24" y="409" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">3</text></g>
-<g data-listing-issue-number="4"><circle cx="24" cy="475" r="11" fill="#b91c1c" /><text x="24" y="475" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">4</text></g>
-<g data-listing-issue-number="5"><circle cx="24" cy="541" r="11" fill="#b91c1c" /><text x="24" y="541" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">5</text></g>
-<g data-listing-issue-number="6"><circle cx="24" cy="607" r="11" fill="#b91c1c" /><text x="24" y="607" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">6</text></g>
-<g data-listing-issue-number="7"><circle cx="24" cy="673" r="11" fill="#b91c1c" /><text x="24" y="673" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">7</text></g>
-<g data-listing-issue-number="8"><circle cx="24" cy="783" r="11" fill="#b91c1c" /><text x="24" y="783" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">8</text></g>
-<g data-listing-issue-number="9"><circle cx="24" cy="849" r="11" fill="#b91c1c" /><text x="24" y="849" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">9</text></g>
-<g data-listing-issue-number="10"><circle cx="24" cy="915" r="11" fill="#b91c1c" /><text x="24" y="915" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">10</text></g>
-<g data-listing-issue-number="11"><circle cx="24" cy="1003" r="11" fill="#b91c1c" /><text x="24" y="1003" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">11</text></g>
+<g data-listing-issue-number="1"><circle cx="24" cy="277" r="11" fill="#b91c1c" /><text x="24" y="277" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">1</text></g>
+<g data-listing-issue-number="2"><circle cx="24" cy="365" r="11" fill="#b91c1c" /><text x="24" y="365" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">2</text></g>
+<g data-listing-issue-number="3"><circle cx="24" cy="541" r="11" fill="#b91c1c" /><text x="24" y="541" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">3</text></g>
+<g data-listing-issue-number="4"><circle cx="24" cy="607" r="11" fill="#b91c1c" /><text x="24" y="607" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">4</text></g>
+<g data-listing-issue-number="5"><circle cx="24" cy="673" r="11" fill="#b91c1c" /><text x="24" y="673" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">5</text></g>
+<g data-listing-issue-number="6"><circle cx="24" cy="739" r="11" fill="#b91c1c" /><text x="24" y="739" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">6</text></g>
+<g data-listing-issue-number="7"><circle cx="24" cy="805" r="11" fill="#b91c1c" /><text x="24" y="805" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">7</text></g>
+<g data-listing-issue-number="8"><circle cx="24" cy="871" r="11" fill="#b91c1c" /><text x="24" y="871" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">8</text></g>
+<g data-listing-issue-number="9"><circle cx="24" cy="981" r="11" fill="#b91c1c" /><text x="24" y="981" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">9</text></g>
+<g data-listing-issue-number="10"><circle cx="24" cy="1047" r="11" fill="#b91c1c" /><text x="24" y="1047" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">10</text></g>
+<g data-listing-issue-number="11"><circle cx="24" cy="1113" r="11" fill="#b91c1c" /><text x="24" y="1113" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">11</text></g>
+<g data-listing-issue-number="12"><circle cx="24" cy="1201" r="11" fill="#b91c1c" /><text x="24" y="1201" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-size="11" fill="white">12</text></g>
   </g>
 </svg>

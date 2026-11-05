@@ -189,6 +189,21 @@ export function renderIssueOverlay(input: {
         break
       }
       case "ComponentOverlap": {
+        if (issue.pinBodyOverlaps?.length) {
+          for (const pin of issue.pinBodyOverlaps) {
+            includeBounds({
+              left: Math.min(pin.start.x, pin.end.x),
+              right: Math.max(pin.start.x, pin.end.x),
+              bottom: Math.min(pin.start.y, pin.end.y),
+              top: Math.max(pin.start.y, pin.end.y),
+            })
+            anchor ??= pin.start
+            geometry.push(
+              `<line x1="${pin.start.x}" y1="${pin.start.y}" x2="${pin.end.x}" y2="${pin.end.y}" stroke="#dc2626" stroke-width="3" vector-effect="non-scaling-stroke" />`,
+            )
+          }
+          break
+        }
         const first = boxBounds(issue.firstComponent)
         const second = boxBounds(issue.secondComponent)
         rect({

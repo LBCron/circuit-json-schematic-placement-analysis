@@ -20,7 +20,7 @@ export async function createOverlappingSchematicBoxesCircuitJson(): Promise<Circ
         name="R2"
         resistance="1k"
         footprint="0402"
-        schX={1}
+        schX={0.9}
         schY={0.5}
       />
     </board>,
