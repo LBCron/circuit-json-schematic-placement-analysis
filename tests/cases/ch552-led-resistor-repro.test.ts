@@ -30,6 +30,7 @@ test("reproduces the published ch552-led-resistor branch and its missed chip gro
       .map((i) => i.lineItemType)
       .sort(),
   ).toEqual([
+    "LedResistorBranchSeparatedFromChipPin",
     "SchematicBoxInnerLabelCollision",
     "TwoPinComponentShouldBeVertical",
   ])

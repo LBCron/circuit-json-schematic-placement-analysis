@@ -25,7 +25,7 @@ const pins = {
   pin19: "VCC",
   pin20: "V33",
 } as const
-function LedBranch() {
+function LedBranch({ after = false }: { after?: boolean }) {
   return (
     <board routingDisabled>
       <chip
@@ -59,23 +59,23 @@ function LedBranch() {
         }}
         schX={0}
         schY={0}
-        schHeight={undefined}
+        schHeight={after ? 3.2 : undefined}
       />
       <resistor
         name="R8"
         resistance="1k"
         footprint="0402"
-        schX={1.8}
-        schY={-4.5}
-        schRotation={0}
+        schX={after ? -3.5 : 1.8}
+        schY={after ? 2 : -4.5}
+        schRotation={after ? 270 : 0}
       />
       <led
         name="D2"
         color="green"
         footprint="0603"
-        schX={3.3}
-        schY={-4.5}
-        schRotation={0}
+        schX={after ? -3.5 : 3.3}
+        schY={after ? 0.64 : -4.5}
+        schRotation={after ? 270 : 0}
       />
       <trace from=".R8 > .pin1" to="net.VBUS5" />
       <trace from=".R8 > .pin2" to=".D2 > .anode" />
@@ -86,10 +86,10 @@ function LedBranch() {
   )
 }
 
-export async function createCh552LedResistor() {
+export async function createCh552LedResistor(after = false) {
   const c = new Circuit()
   c.pcbDisabled = true
-  c.add(<LedBranch />)
+  c.add(<LedBranch after={after} />)
   await c.renderUntilSettled()
   return c.getCircuitJson()
 }

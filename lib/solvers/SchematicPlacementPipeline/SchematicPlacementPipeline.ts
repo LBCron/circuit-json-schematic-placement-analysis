@@ -1,3 +1,4 @@
+import { ChipLedResistorGroupingSolver } from "../ChipLedResistorGroupingSolver/ChipLedResistorGroupingSolver"
 import { FuseMosfetAlignmentSolver } from "../FuseMosfetAlignmentSolver/FuseMosfetAlignmentSolver"
 import { ChipDiodeCapacitorNetworkGroupingSolver } from "../ChipDiodeCapacitorNetworkGroupingSolver/ChipDiodeCapacitorNetworkGroupingSolver"
 import { ChipPinTestPointAlignmentSolver } from "../ChipPinTestPointAlignmentSolver/ChipPinTestPointAlignmentSolver"
@@ -111,6 +112,7 @@ const solversByIssueType = {
   ChipDiodeCapacitorNetworkNotGrouped: [
     ChipDiodeCapacitorNetworkGroupingSolver,
   ],
+  LedResistorBranchSeparatedFromChipPin: [ChipLedResistorGroupingSolver],
   FuseDiodeNotAligned: [FuseDiodeAlignmentSolver],
   InductorSeparatedFromChipPins: [ChipPinPairInductorPlacementSolver],
   SwitchMatrixDiodeSeparatedFromSwitch: [SwitchMatrixDiodePlacementSolver],
@@ -245,6 +247,13 @@ export class SchematicPlacementPipeline extends BasePipelineSolver<CircuitJson> 
     definePipelineStep(
       "ChipDiodeCapacitorNetworkGroupingSolver",
       ChipDiodeCapacitorNetworkGroupingSolver,
+      (p: SchematicPlacementPipeline): [SolverParams] => [
+        { ctx: p.ctx, issues: p.issues },
+      ],
+    ),
+    definePipelineStep(
+      "ChipLedResistorGroupingSolver",
+      ChipLedResistorGroupingSolver,
       (p: SchematicPlacementPipeline): [SolverParams] => [
         { ctx: p.ctx, issues: p.issues },
       ],
