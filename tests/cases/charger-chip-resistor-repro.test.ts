@@ -26,7 +26,7 @@ test("reproduces the published charger-chip-resistor branch and its missed chip 
       .getIssues()
       .map((i) => i.lineItemType)
       .sort(),
-  ).toEqual([])
+  ).toEqual(["ResistorSeparatedFromChipPin"])
   expect(
     createIssueReproSnapshot({
       circuitJson: json,
