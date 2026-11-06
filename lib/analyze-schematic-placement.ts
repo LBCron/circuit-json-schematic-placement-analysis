@@ -1,4 +1,5 @@
 import { ComponentBranchOrderSolver } from "./solvers/ComponentBranchOrderSolver/ComponentBranchOrderSolver"
+import { RcrJunctionGroupingSolver } from "./solvers/RcrJunctionGroupingSolver/RcrJunctionGroupingSolver"
 import { ChipLedResistorGroupingSolver } from "./solvers/ChipLedResistorGroupingSolver/ChipLedResistorGroupingSolver"
 import { FuseMosfetAlignmentSolver } from "./solvers/FuseMosfetAlignmentSolver/FuseMosfetAlignmentSolver"
 import { ChipDiodeCapacitorNetworkGroupingSolver } from "./solvers/ChipDiodeCapacitorNetworkGroupingSolver/ChipDiodeCapacitorNetworkGroupingSolver"
@@ -191,6 +192,7 @@ export class SchematicPlacementAnalysis {
       MosfetGateNetworkNotGrouped: 0,
       RrcTimingNetworkNotGrouped: 0,
       ComponentBranchesOutOfOrder: 0,
+      RcrJunctionNotGrouped: 0,
       CapacitorSeparatedFromChipPins: 0,
       CrystalSeparatedFromChipPins: 0,
       ResistorDividerSeparatedFromChip: 0,
@@ -280,6 +282,8 @@ export class SchematicPlacementAnalysis {
         return ChipPinCrystalPlacementSolver.issueToString(issue)
       case "ComponentBranchesOutOfOrder":
         return ComponentBranchOrderSolver.issueToString(issue)
+      case "RcrJunctionNotGrouped":
+        return RcrJunctionGroupingSolver.issueToString(issue)
       case "RrcTimingNetworkNotGrouped":
         return RrcTimingNetworkGroupingSolver.issueToString(issue)
       case "CapacitorSeparatedFromChipPins":

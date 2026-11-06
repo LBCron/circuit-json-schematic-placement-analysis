@@ -71,6 +71,11 @@ export const getRelevantPlacementsForIssues = ({
         addPlacement(issue.firstComponentSchematicBox)
         addPlacement(issue.secondComponentSchematicBox)
         break
+      case "RcrJunctionNotGrouped":
+        addPlacement(issue.firstResistorSchematicBox)
+        addPlacement(issue.secondResistorSchematicBox)
+        addPlacement(issue.capacitorSchematicBox)
+        break
       case "ChipPinTestPointNotAligned":
         addPlacement(issue.chipSchematicBox)
         addPlacement(issue.testPointSchematicBox)

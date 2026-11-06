@@ -1,4 +1,5 @@
 import { ComponentBranchOrderSolver } from "../ComponentBranchOrderSolver/ComponentBranchOrderSolver"
+import { RcrJunctionGroupingSolver } from "../RcrJunctionGroupingSolver/RcrJunctionGroupingSolver"
 import { ChipLedResistorGroupingSolver } from "../ChipLedResistorGroupingSolver/ChipLedResistorGroupingSolver"
 import { FuseMosfetAlignmentSolver } from "../FuseMosfetAlignmentSolver/FuseMosfetAlignmentSolver"
 import { ChipDiodeCapacitorNetworkGroupingSolver } from "../ChipDiodeCapacitorNetworkGroupingSolver/ChipDiodeCapacitorNetworkGroupingSolver"
@@ -93,6 +94,7 @@ type SolverParams = {
 // Include prerequisites used when deduplicating findings in getOutput().
 const solversByIssueType = {
   ComponentBranchesOutOfOrder: [ComponentBranchOrderSolver],
+  RcrJunctionNotGrouped: [RcrJunctionGroupingSolver],
   ChipPinTestPointNotAligned: [ChipPinTestPointAlignmentSolver],
   CapacitorConnectorNotAligned: [CapacitorConnectorAlignmentSolver],
   ConnectorTestPointNotAligned: [ConnectorTestPointAlignmentSolver],
@@ -618,6 +620,13 @@ export class SchematicPlacementPipeline extends BasePipelineSolver<CircuitJson> 
     definePipelineStep(
       "ComponentBranchOrderSolver",
       ComponentBranchOrderSolver,
+      (p: SchematicPlacementPipeline): [SolverParams] => [
+        { ctx: p.ctx, issues: p.issues },
+      ],
+    ),
+    definePipelineStep(
+      "RcrJunctionGroupingSolver",
+      RcrJunctionGroupingSolver,
       (p: SchematicPlacementPipeline): [SolverParams] => [
         { ctx: p.ctx, issues: p.issues },
       ],

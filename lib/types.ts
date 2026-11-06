@@ -956,6 +956,7 @@ export interface SwitchMatrixBranchesTooSpreadOut {
 
 export type SchematicPlacementIssue =
   | ComponentBranchesOutOfOrder
+  | RcrJunctionNotGrouped
   | InductorDiodeNotGrouped
   | ResistorDividerSeparatedFromChip
   | ChipPinTestPointNotAligned
@@ -1065,5 +1066,15 @@ export interface ComponentBranchesOutOfOrder {
   hostSchematicBox: SchematicBoxPlacement
   firstComponentSchematicBox: SchematicBoxPlacement
   secondComponentSchematicBox: SchematicBoxPlacement
+  message: string
+}
+
+export interface RcrJunctionNotGrouped {
+  lineItemType: "RcrJunctionNotGrouped"
+  firstResistorSchematicBox: SchematicBoxPlacement
+  secondResistorSchematicBox: SchematicBoxPlacement
+  capacitorSchematicBox: SchematicBoxPlacement
+  maxPinDistance: number
+  maxRecommendedPinDistance: number
   message: string
 }

@@ -94,6 +94,7 @@ test("reproduces the published rcr-junction placement and its missed pattern", a
   const analysis = analyzeSchematicPlacement(json)
   expect(analysis.getIssues().map((e) => e.lineItemType)).toEqual([
     "TwoPinComponentHasInvertedRails",
+    "RcrJunctionNotGrouped",
   ])
   expect(
     createIssueReproSnapshot({
@@ -116,12 +117,13 @@ test("reproduces the published rcr-junction placement and its missed pattern", a
           analysis: originalAnalysis,
           schematicSheetId: sheetId,
           showFullSchematic: true,
-          showOverlay: false,
+          showOverlay: true,
+          showIssueGeometry: false,
           width: 1600,
           height: 1000,
         }).svg,
         createAnalyzerTextSvg(
-          `Original published sheet, unchanged.\nExisting findings on this sheet: ${originalAnalysis.getIssues({ schematicSheetId: sheetId }).length}. The new pattern is not yet reported.`,
+          `Original published sheet, unchanged.\nExisting findings on this sheet: ${originalAnalysis.getIssues({ schematicSheetId: sheetId }).length}. The new rule now reports the previously missed pattern.`,
           1600,
         ),
       ],
