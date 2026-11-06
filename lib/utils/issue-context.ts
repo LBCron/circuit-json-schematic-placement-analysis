@@ -66,6 +66,11 @@ export const getRelevantPlacementsForIssues = ({
 
   for (const issue of issues) {
     switch (issue.lineItemType) {
+      case "ComponentBranchesOutOfOrder":
+        addPlacement(issue.hostSchematicBox)
+        addPlacement(issue.firstComponentSchematicBox)
+        addPlacement(issue.secondComponentSchematicBox)
+        break
       case "ChipPinTestPointNotAligned":
         addPlacement(issue.chipSchematicBox)
         addPlacement(issue.testPointSchematicBox)

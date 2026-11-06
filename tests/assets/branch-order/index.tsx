@@ -21,7 +21,11 @@ const labels = {
   pin16: ["IN1"],
   pin17: ["EP", "thermalpad"],
 } as const
-export default function BranchOrder() {
+export default function BranchOrder({
+  corrected = false,
+}: {
+  corrected?: boolean
+}) {
   return (
     <board routingDisabled>
       <net name="GND" isGroundNet />
@@ -59,8 +63,8 @@ export default function BranchOrder() {
         footprint="1206"
         name="RS_M1"
         resistance="0.3"
-        schX={-7.3275}
-        schY={-3.445}
+        schX={corrected ? -9 : -7.3275}
+        schY={corrected ? -1.7 : -3.445}
         schRotation={270}
         connections={{ pin2: "net.GND" }}
       />
@@ -76,10 +80,10 @@ export default function BranchOrder() {
     </board>
   )
 }
-export async function createBranchOrder() {
+export async function createBranchOrder(corrected = false) {
   const circuit = new Circuit()
   circuit.pcbDisabled = true
-  circuit.add(<BranchOrder />)
+  circuit.add(<BranchOrder corrected={corrected} />)
   await circuit.renderUntilSettled()
   return circuit.getCircuitJson()
 }

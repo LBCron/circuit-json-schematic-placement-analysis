@@ -21,6 +21,7 @@ test("records the full input sheet's local trace suggestions without rearranging
     ),
   ).toEqual({
     ParallelDiodeResistorNotAligned: 1,
+    ComponentBranchesOutOfOrder: 1,
     GenericSchematicBoxTooWide: 2,
     SchematicPinPaddingToEdgeTooLarge: 4,
     NetLabelCollision: 1,
@@ -33,6 +34,15 @@ test("records the full input sheet's local trace suggestions without rearranging
       diodeSchematicBox: { sourceComponentName: "D_PD_SENSE" },
       resistorSchematicBox: { sourceComponentName: "R_PD_SENSE_CHARGE" },
       reason: "crossed_connections",
+    },
+  ])
+  expect(
+    analysis.getIssues({ issueTypes: ["ComponentBranchesOutOfOrder"] }),
+  ).toMatchObject([
+    {
+      hostSchematicBox: { sourceComponentName: "U_PD" },
+      firstComponentSchematicBox: { sourceComponentName: "C_PD_1V2" },
+      secondComponentSchematicBox: { sourceComponentName: "C_PD_2V7" },
     },
   ])
   const padding = analysis.getIssues({
@@ -168,7 +178,7 @@ test("records the full input sheet's local trace suggestions without rearranging
         }
       })
     expect([...new Set(markers.map((marker) => marker.number))]).toEqual(
-      Array.from({ length: 14 }, (_, index) => index + 1),
+      Array.from({ length: 15 }, (_, index) => index + 1),
     )
     expect(
       markers.every(

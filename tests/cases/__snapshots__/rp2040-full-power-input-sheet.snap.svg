@@ -1,4 +1,4 @@
-<svg width="1800" height="2842" viewBox="0 0 1800 2842" xmlns="http://www.w3.org/2000/svg">
+<svg width="1800" height="2996" viewBox="0 0 1800 2996" xmlns="http://www.w3.org/2000/svg">
   <g transform="translate(0, 0)">
     <svg xmlns="http://www.w3.org/2000/svg" class="tscircuit-schematic" width="1800" height="1200" style="background-color: rgb(245, 241, 237)" data-real-to-screen-transform="matrix(50.5556477028,0,0,-50.5556477028,898.8920007367,643.6042461436)"><style>
               .boundary { fill: rgb(245, 241, 237); }
@@ -66,9 +66,13 @@
     &lt;Move componentName=&quot;R_PD_SCL_SER&quot; newSchX=&quot;-1.75&quot; newSchY=&quot;1.5&quot; /&gt;
     &lt;Move componentName=&quot;R_PD_SDA_SER&quot; newSchX=&quot;2.75&quot; newSchY=&quot;1.5&quot; /&gt;
   &lt;/SuggestedFix&gt;
-&lt;/ComponentNetLabelCollision&gt;</title><g transform="matrix(50.5556477028 0 0 -50.5556477028 898.8920007367 643.6042461436)"><rect x="0.04999999999999999" y="9.2" width="0.8999999999999999" height="0.6000000000000014" fill="none" stroke="#2563eb" stroke-width="0.35" stroke-dasharray="5 3" vector-effect="non-scaling-stroke" /><rect x="-1.3" y="1.175" width="0.6000000000000001" height="0.6499999999999999" fill="none" stroke="#2563eb" stroke-width="0.35" stroke-dasharray="5 3" vector-effect="non-scaling-stroke" /><rect x="1.7" y="1.175" width="0.5999999999999999" height="0.6499999999999999" fill="none" stroke="#2563eb" stroke-width="0.35" stroke-dasharray="5 3" vector-effect="non-scaling-stroke" /><rect x="0.1" y="9.2" width="0.20000000000000004" height="0.6000000000000014" fill="#ef444433" stroke="#dc2626" stroke-width="0.5"  vector-effect="non-scaling-stroke" /><rect x="-0.44000000000000017" y="1.4" width="1.4000000000000004" height="0.20000000000000018" fill="#ef444433" stroke="#dc2626" stroke-width="0.5"  vector-effect="non-scaling-stroke" /></g></g><line x1="322.55761692477995" y1="186.07563443325995" x2="296.55761692477995" y2="148.07563443325995" stroke="#b91c1c" stroke-width="0.5" />
+&lt;/ComponentNetLabelCollision&gt;</title><g transform="matrix(50.5556477028 0 0 -50.5556477028 898.8920007367 643.6042461436)"><rect x="0.04999999999999999" y="9.2" width="0.8999999999999999" height="0.6000000000000014" fill="none" stroke="#2563eb" stroke-width="0.35" stroke-dasharray="5 3" vector-effect="non-scaling-stroke" /><rect x="-1.3" y="1.175" width="0.6000000000000001" height="0.6499999999999999" fill="none" stroke="#2563eb" stroke-width="0.35" stroke-dasharray="5 3" vector-effect="non-scaling-stroke" /><rect x="1.7" y="1.175" width="0.5999999999999999" height="0.6499999999999999" fill="none" stroke="#2563eb" stroke-width="0.35" stroke-dasharray="5 3" vector-effect="non-scaling-stroke" /><rect x="0.1" y="9.2" width="0.20000000000000004" height="0.6000000000000014" fill="#ef444433" stroke="#dc2626" stroke-width="0.5"  vector-effect="non-scaling-stroke" /><rect x="-0.44000000000000017" y="1.4" width="1.4000000000000004" height="0.20000000000000018" fill="#ef444433" stroke="#dc2626" stroke-width="0.5"  vector-effect="non-scaling-stroke" /></g></g>
+<g data-issue-index="14" data-issue-type="ComponentBranchesOutOfOrder"><title>#15 ComponentBranchesOutOfOrder
+&lt;ComponentBranchesOutOfOrder hostComponentName=&quot;U_PD&quot; firstComponentName=&quot;C_PD_1V2&quot; secondComponentName=&quot;C_PD_2V7&quot; message=&quot;Reorder C_PD_1V2 and C_PD_2V7 to follow their connected pins on the up side of U_PD, avoiding the crossed wires. Preserve component symbols, pin assignments and polarity; leave room for labels and reroute both branches without moving the host pins.&quot; /&gt;</title><g transform="matrix(50.5556477028 0 0 -50.5556477028 898.8920007367 643.6042461436)"><rect x="-2.45" y="9.2" width="0.9000000000000001" height="0.6000000000000014" fill="none" stroke="#2563eb" stroke-width="0.35" stroke-dasharray="5 3" vector-effect="non-scaling-stroke" /><rect x="-2.45" y="9.2" width="0.9000000000000001" height="0.6000000000000014" fill="#ef444433" stroke="#dc2626" stroke-width="0.5"  vector-effect="non-scaling-stroke" /><rect x="0.04999999999999999" y="9.2" width="0.8999999999999999" height="0.6000000000000014" fill="#ef444433" stroke="#dc2626" stroke-width="0.5"  vector-effect="non-scaling-stroke" /></g></g><line x1="322.55761692477995" y1="186.07563443325995" x2="296.55761692477995" y2="148.07563443325995" stroke="#b91c1c" stroke-width="0.5" />
 <line x1="797.7807053311" y1="223.99237021035992" x2="771.7807053311" y2="185.99237021035992" stroke="#b91c1c" stroke-width="0.5" />
-<line x1="1237.61484034546" y1="526.06236523459" x2="1211.61484034546" y2="488.06236523458995" stroke="#b91c1c" stroke-width="0.5" /><g data-issue-number="1" data-issue-type="ParallelDiodeResistorNotAligned" transform="translate(1226.492597850844 466.287278155444) scale(1)"><title>#1 ParallelDiodeResistorNotAligned
+<line x1="1237.61484034546" y1="526.06236523459" x2="1211.61484034546" y2="488.06236523458995" stroke="#b91c1c" stroke-width="0.5" />
+<line x1="797.7807053311" y1="223.99237021035992" x2="771.7807053311" y2="211.99237021035992" stroke="#b91c1c" stroke-width="0.5" />
+<line x1="901.4197831218399" y1="148.15889865615992" x2="875.4197831218399" y2="110.15889865615992" stroke="#b91c1c" stroke-width="0.5" /><g data-issue-number="1" data-issue-type="ParallelDiodeResistorNotAligned" transform="translate(1226.492597850844 466.287278155444) scale(1)"><title>#1 ParallelDiodeResistorNotAligned
 &lt;ParallelDiodeResistorNotAligned diodeComponentName=&quot;D_PD_SENSE&quot; resistorComponentName=&quot;R_PD_SENSE_CHARGE&quot; reason=&quot;crossed_connections&quot; message=&quot;Draw D_PD_SENSE and R_PD_SENSE_CHARGE as adjacent parallel rows or columns with their shared nets at matching ends. Preserve every pin connection and diode polarity, leave room for labels, and reroute the affected wires.&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">1</text></g>
 <g data-issue-number="1" data-issue-type="ParallelDiodeResistorNotAligned" transform="translate(1237.61484034546 514.06236523459) scale(1)"><title>#1 ParallelDiodeResistorNotAligned
 &lt;ParallelDiodeResistorNotAligned diodeComponentName=&quot;D_PD_SENSE&quot; resistorComponentName=&quot;R_PD_SENSE_CHARGE&quot; reason=&quot;crossed_connections&quot; message=&quot;Draw D_PD_SENSE and R_PD_SENSE_CHARGE as adjacent parallel rows or columns with their shared nets at matching ends. Preserve every pin connection and diode polarity, leave room for labels, and reroute the affected wires.&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">1</text></g>
@@ -113,7 +117,13 @@
     &lt;Move componentName=&quot;R_PD_SCL_SER&quot; newSchX=&quot;-1.75&quot; newSchY=&quot;1.5&quot; /&gt;
     &lt;Move componentName=&quot;R_PD_SDA_SER&quot; newSchX=&quot;2.75&quot; newSchY=&quot;1.5&quot; /&gt;
   &lt;/SuggestedFix&gt;
-&lt;/ComponentNetLabelCollision&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">14</text></g></g></svg>
+&lt;/ComponentNetLabelCollision&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">14</text></g>
+<g data-issue-number="15" data-issue-type="ComponentBranchesOutOfOrder" transform="translate(771.7807053311 211.99237021035992) scale(1)"><title>#15 ComponentBranchesOutOfOrder
+&lt;ComponentBranchesOutOfOrder hostComponentName=&quot;U_PD&quot; firstComponentName=&quot;C_PD_1V2&quot; secondComponentName=&quot;C_PD_2V7&quot; message=&quot;Reorder C_PD_1V2 and C_PD_2V7 to follow their connected pins on the up side of U_PD, avoiding the crossed wires. Preserve component symbols, pin assignments and polarity; leave room for labels and reroute both branches without moving the host pins.&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">15</text></g>
+<g data-issue-number="15" data-issue-type="ComponentBranchesOutOfOrder" transform="translate(775.03066386484 136.15889865615992) scale(1)"><title>#15 ComponentBranchesOutOfOrder
+&lt;ComponentBranchesOutOfOrder hostComponentName=&quot;U_PD&quot; firstComponentName=&quot;C_PD_1V2&quot; secondComponentName=&quot;C_PD_2V7&quot; message=&quot;Reorder C_PD_1V2 and C_PD_2V7 to follow their connected pins on the up side of U_PD, avoiding the crossed wires. Preserve component symbols, pin assignments and polarity; leave room for labels and reroute both branches without moving the host pins.&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">15</text></g>
+<g data-issue-number="15" data-issue-type="ComponentBranchesOutOfOrder" transform="translate(875.4197831218399 110.15889865615992) scale(1)"><title>#15 ComponentBranchesOutOfOrder
+&lt;ComponentBranchesOutOfOrder hostComponentName=&quot;U_PD&quot; firstComponentName=&quot;C_PD_1V2&quot; secondComponentName=&quot;C_PD_2V7&quot; message=&quot;Reorder C_PD_1V2 and C_PD_2V7 to follow their connected pins on the up side of U_PD, avoiding the crossed wires. Preserve component symbols, pin assignments and polarity; leave room for labels and reroute both branches without moving the host pins.&quot; /&gt;</title><circle r="11" fill="#b91c1c" /><text y="4" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11">15</text></g></g></svg>
   </g>
   <g transform="translate(0, 1200) scale(1, 1) translate(0, 0)">
     <rect width="100%" height="100%" fill="#fff" />
@@ -124,8 +134,9 @@
 <tspan x="18" dy="22">ParallelDiodeResistorNotAligned: 1</tspan>
 <tspan x="18" dy="22">NetLabelCollision: 1</tspan>
 <tspan x="18" dy="22">TwoPinComponentShouldBeVertical: 6</tspan>
+<tspan x="18" dy="22">ComponentBranchesOutOfOrder: 1</tspan>
 <tspan x="18" dy="22">Selected type(s): all</tspan>
-<tspan x="18" dy="22">Matching issues: 14</tspan>
+<tspan x="18" dy="22">Matching issues: 15</tspan>
 <tspan x="18" dy="22">#1</tspan>
 <tspan x="18" dy="22">&lt;ParallelDiodeResistorNotAligned diodeComponentName=&quot;D_PD_SENSE&quot;</tspan>
 <tspan x="18" dy="22">  resistorComponentName=&quot;R_PD_SENSE_CHARGE&quot; reason=&quot;crossed_connections&quot; message=&quot;Draw</tspan>
@@ -191,6 +202,12 @@
 <tspan x="18" dy="22">    &lt;Move componentName=&quot;R_PD_SDA_SER&quot; newSchX=&quot;2.75&quot; newSchY=&quot;1.5&quot; /&gt;</tspan>
 <tspan x="18" dy="22">  &lt;/SuggestedFix&gt;</tspan>
 <tspan x="18" dy="22">&lt;/ComponentNetLabelCollision&gt;</tspan>
+<tspan x="18" dy="22">#15</tspan>
+<tspan x="18" dy="22">&lt;ComponentBranchesOutOfOrder hostComponentName=&quot;U_PD&quot; firstComponentName=&quot;C_PD_1V2&quot;</tspan>
+<tspan x="18" dy="22">  secondComponentName=&quot;C_PD_2V7&quot; message=&quot;Reorder C_PD_1V2 and C_PD_2V7 to follow their</tspan>
+<tspan x="18" dy="22">  connected pins on the up side of U_PD, avoiding the crossed wires. Preserve component symbols,</tspan>
+<tspan x="18" dy="22">  pin assignments and polarity; leave room for labels and reroute both branches without moving</tspan>
+<tspan x="18" dy="22">  the host pins.&quot; /&gt;</tspan>
 </text>
   </g>
 </svg>

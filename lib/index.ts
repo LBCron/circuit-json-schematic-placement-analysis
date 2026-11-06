@@ -1,3 +1,4 @@
+export { ComponentBranchOrderSolver } from "./solvers/ComponentBranchOrderSolver/ComponentBranchOrderSolver"
 export { ChipLedResistorGroupingSolver } from "./solvers/ChipLedResistorGroupingSolver/ChipLedResistorGroupingSolver"
 export { FuseMosfetAlignmentSolver } from "./solvers/FuseMosfetAlignmentSolver/FuseMosfetAlignmentSolver"
 export { ChipDiodeCapacitorNetworkGroupingSolver } from "./solvers/ChipDiodeCapacitorNetworkGroupingSolver/ChipDiodeCapacitorNetworkGroupingSolver"
