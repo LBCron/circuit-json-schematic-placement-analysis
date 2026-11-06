@@ -1,0 +1,82 @@
+{
+  "board": "abse/boostxl-audio",
+  "version": "1.0.9",
+  "url": "https://tscircuit.com/abse/boostxl-audio?version=1.0.9",
+  "scope": "Three-component extract; connections to omitted components are recorded in boundary. This is not a full-sheet correction.",
+  "boundary": [
+    {
+      "pin": "R35.1",
+      "nets": [],
+      "externalPeers": []
+    },
+    {
+      "pin": "R35.2",
+      "nets": [],
+      "externalPeers": ["U5.3", "C19.2", "R38.1"]
+    },
+    {
+      "pin": "R32.1",
+      "nets": ["MIC_PWR"],
+      "externalPeers": [
+        "R1.2",
+        "R3.2",
+        "U5.5",
+        "U5.6",
+        "R30.2",
+        "C14.1",
+        "C15.1"
+      ]
+    },
+    {
+      "pin": "R32.2",
+      "nets": [],
+      "externalPeers": []
+    },
+    {
+      "pin": "C22.1",
+      "nets": [],
+      "externalPeers": []
+    },
+    {
+      "pin": "C22.2",
+      "nets": ["GND"],
+      "externalPeers": [
+        "J1J3.3",
+        "J2J4.1",
+        "U2.5",
+        "C4.2",
+        "C5.2",
+        "C6.2",
+        "C3.2",
+        "U1.3",
+        "U1.4",
+        "U1.10",
+        "U1.17",
+        "R11.2",
+        "R17.2",
+        "R23.2",
+        "C7.2",
+        "MIC1.2",
+        "U5.2",
+        "R38.2",
+        "C13.2",
+        "C14.2",
+        "C15.2",
+        "C8.1",
+        "C20.2",
+        "U3.4",
+        "R7.2",
+        "R2.2",
+        "R20.2",
+        "R37.2",
+        "U4.7",
+        "U4.9",
+        "C12.2",
+        "R27.3",
+        "C16.2",
+        "C17.2",
+        "C18.2"
+      ]
+    }
+  ]
+}
