@@ -381,6 +381,12 @@ export const getRelevantPlacementsForIssues = ({
         addPlacement(issue.boxComponent)
         addPlacement(issue.labelComponent)
         break
+      case "RailNetLabelHasIncorrectOrientation":
+        addPlacement(issue.hostSchematicBox)
+        break
+      case "SameComponentNetLabelCollision":
+        addPlacement(issue.schematicBox)
+        break
       case "NetLabelCollision":
         for (const pair of issue.pairs) {
           addComponentName(pair.comp1Name, issue.schematicSheetId)

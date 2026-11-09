@@ -645,6 +645,37 @@ export interface NetLabelCollision {
   }>
 }
 
+/** A rail net label does not point toward its canonical supply/ground direction. */
+export interface RailNetLabelHasIncorrectOrientation {
+  lineItemType: "RailNetLabelHasIncorrectOrientation"
+  schematicNetLabelId: string
+  sourceNetId?: string
+  schematicSheetId?: string
+  schematicSheetName?: string
+  hostSchematicBox?: SchematicBoxPlacement
+  text: string
+  railType: "power" | "ground"
+  anchorSide: "top" | "bottom" | "left" | "right"
+  expectedAnchorSide: "top" | "bottom"
+  expectedFacingDirection: "up" | "down"
+  labelBounds: SchematicIssueBounds
+  message: string
+}
+
+/** Two net-label flags attached to pins or traces of the same component overlap. */
+export interface SameComponentNetLabelCollision {
+  lineItemType: "SameComponentNetLabelCollision"
+  schematicBox: SchematicBoxPlacement
+  firstNetLabelId: string
+  secondNetLabelId: string
+  firstText: string
+  secondText: string
+  overlappingLabel1Bounds: SchematicIssueBounds
+  overlappingLabel2Bounds: SchematicIssueBounds
+  collisionBounds: SchematicIssueBounds
+  message: string
+}
+
 export interface SchematicTextCollisionObject {
   type: "text" | "trace" | "component"
   id: string
@@ -1030,6 +1061,8 @@ export type SchematicPlacementIssue =
   | ComponentNetLabelCollision
   | ComponentBoxNetLabelCollision
   | NetLabelCollision
+  | RailNetLabelHasIncorrectOrientation
+  | SameComponentNetLabelCollision
   | SchematicTextCollision
   | ResetNetworkNotGrouped
   | ConnectorPositionCausesTraceDetours

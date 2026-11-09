@@ -204,6 +204,13 @@ function getIssueHighlights(
           box(issue.boxBounds)
           box(issue.labelBounds)
         }
+        if (issue.lineItemType === "RailNetLabelHasIncorrectOrientation") {
+          box(issue.labelBounds)
+        }
+        if (issue.lineItemType === "SameComponentNetLabelCollision") {
+          box(issue.overlappingLabel1Bounds)
+          box(issue.overlappingLabel2Bounds)
+        }
         if (issue.lineItemType === "ResetNetworkNotGrouped") {
           const port = circuitJson.find(
             (e) =>

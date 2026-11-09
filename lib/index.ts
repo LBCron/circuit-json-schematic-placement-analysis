@@ -50,6 +50,8 @@ export { SchematicPlacementPipeline } from "./solvers/SchematicPlacementPipeline
 export { TraceSimplificationSolver } from "./solvers/TraceSimplificationSolver/TraceSimplificationSolver"
 export { TwoPinComponentOrientationSolver } from "./solvers/TwoPinComponentOrientationSolver/TwoPinComponentOrientationSolver"
 export { VerboseNetLabelSolver } from "./solvers/VerboseNetLabelSolver/VerboseNetLabelSolver"
+export { RailNetLabelOrientationSolver } from "./solvers/RailNetLabelOrientationSolver/RailNetLabelOrientationSolver"
+export { SameComponentNetLabelCollisionSolver } from "./solvers/SameComponentNetLabelCollisionSolver/SameComponentNetLabelCollisionSolver"
 export * from "./types"
 export { LowSideTransistorPlacementSolver } from "./solvers/LowSideTransistorPlacementSolver/LowSideTransistorPlacementSolver"
 export { UsbSeriesResistorPlacementSolver } from "./solvers/UsbSeriesResistorPlacementSolver/UsbSeriesResistorPlacementSolver"

@@ -228,6 +228,13 @@ export function renderIssueOverlay(input: {
         rect(issue.boxBounds)
         rect(issue.labelBounds)
         break
+      case "RailNetLabelHasIncorrectOrientation":
+        rect(issue.labelBounds)
+        break
+      case "SameComponentNetLabelCollision":
+        rect(issue.overlappingLabel1Bounds)
+        rect(issue.overlappingLabel2Bounds)
+        break
       case "VerboseSchematicNetLabel": {
         anchor = { x: issue.schX, y: issue.schY }
         includeBounds(

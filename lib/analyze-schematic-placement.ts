@@ -70,6 +70,8 @@ import { SchematicPlacementPipeline } from "./solvers/SchematicPlacementPipeline
 import { TraceSimplificationSolver } from "./solvers/TraceSimplificationSolver/TraceSimplificationSolver"
 import { TwoPinComponentOrientationSolver } from "./solvers/TwoPinComponentOrientationSolver/TwoPinComponentOrientationSolver"
 import { VerboseNetLabelSolver } from "./solvers/VerboseNetLabelSolver/VerboseNetLabelSolver"
+import { RailNetLabelOrientationSolver } from "./solvers/RailNetLabelOrientationSolver/RailNetLabelOrientationSolver"
+import { SameComponentNetLabelCollisionSolver } from "./solvers/SameComponentNetLabelCollisionSolver/SameComponentNetLabelCollisionSolver"
 import { SchematicTextClearanceSolver } from "./solvers/SchematicTextClearanceSolver/SchematicTextClearanceSolver"
 import { ResetNetworkGroupingSolver } from "./solvers/ResetNetworkGroupingSolver/ResetNetworkGroupingSolver"
 import type {
@@ -171,6 +173,8 @@ export class SchematicPlacementAnalysis {
       ComponentNetLabelCollision: 0,
       ComponentBoxNetLabelCollision: 0,
       NetLabelCollision: 0,
+      RailNetLabelHasIncorrectOrientation: 0,
+      SameComponentNetLabelCollision: 0,
       FeedbackNetworkNotCompact: 0,
       PullResistorOnWrongSide: 0,
       SchematicTextCollision: 0,
@@ -358,6 +362,10 @@ export class SchematicPlacementAnalysis {
         return PullResistorPlacementSolver.issueToString(issue)
       case "NetLabelCollision":
         return ComponentNetLabelCollisionSolver.netLabelCollisionToString(issue)
+      case "RailNetLabelHasIncorrectOrientation":
+        return RailNetLabelOrientationSolver.issueToString(issue)
+      case "SameComponentNetLabelCollision":
+        return SameComponentNetLabelCollisionSolver.issueToString(issue)
       case "SchematicTextCollision":
         return SchematicTextClearanceSolver.issueToString(issue)
       case "ResetNetworkNotGrouped":

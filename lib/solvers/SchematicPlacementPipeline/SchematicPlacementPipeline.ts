@@ -81,6 +81,8 @@ import type { SolverContext } from "../SolverContext"
 import { TraceSimplificationSolver } from "../TraceSimplificationSolver/TraceSimplificationSolver"
 import { TwoPinComponentOrientationSolver } from "../TwoPinComponentOrientationSolver/TwoPinComponentOrientationSolver"
 import { VerboseNetLabelSolver } from "../VerboseNetLabelSolver/VerboseNetLabelSolver"
+import { RailNetLabelOrientationSolver } from "../RailNetLabelOrientationSolver/RailNetLabelOrientationSolver"
+import { SameComponentNetLabelCollisionSolver } from "../SameComponentNetLabelCollisionSolver/SameComponentNetLabelCollisionSolver"
 import { SchematicTextClearanceSolver } from "../SchematicTextClearanceSolver/SchematicTextClearanceSolver"
 import { ResetNetworkGroupingSolver } from "../ResetNetworkGroupingSolver/ResetNetworkGroupingSolver"
 
@@ -167,6 +169,8 @@ const solversByIssueType = {
   ComponentNetLabelCollision: [ComponentNetLabelCollisionSolver],
   ComponentBoxNetLabelCollision: [ComponentNetLabelCollisionSolver],
   NetLabelCollision: [ComponentNetLabelCollisionSolver],
+  RailNetLabelHasIncorrectOrientation: [RailNetLabelOrientationSolver],
+  SameComponentNetLabelCollision: [SameComponentNetLabelCollisionSolver],
   FeedbackNetworkNotCompact: [FeedbackNetworkPlacementSolver],
   PullResistorOnWrongSide: [
     PullResistorPlacementSolver,
@@ -711,6 +715,20 @@ export class SchematicPlacementPipeline extends BasePipelineSolver<CircuitJson> 
     definePipelineStep(
       "InductorDiodeGroupingSolver",
       InductorDiodeGroupingSolver,
+      (p: SchematicPlacementPipeline): [SolverParams] => [
+        { ctx: p.ctx, issues: p.issues },
+      ],
+    ),
+    definePipelineStep(
+      "RailNetLabelOrientationSolver",
+      RailNetLabelOrientationSolver,
+      (p: SchematicPlacementPipeline): [SolverParams] => [
+        { ctx: p.ctx, issues: p.issues },
+      ],
+    ),
+    definePipelineStep(
+      "SameComponentNetLabelCollisionSolver",
+      SameComponentNetLabelCollisionSolver,
       (p: SchematicPlacementPipeline): [SolverParams] => [
         { ctx: p.ctx, issues: p.issues },
       ],
